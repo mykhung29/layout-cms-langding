@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS - Themes</title>
+    <link rel="stylesheet" href="assets/css/cms-themes_styles.css">
+    <!-- cnd tailwind -->
+     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    
+</head>
+<body>
+    <!-- Header -->
+  <header class="w-full lg:px-48 px-6 py-6 bg-white shadow-md flex items-center justify-between ">
+    <img src="image/bds/logo.png" alt="Logo" class="w-20 md:w-28" /> <!-- Logo sẽ nhỏ lại trên mobile -->
+<!-- Menu (Desktop) -->
+<nav class="hidden md:flex items-center lg:space-x-6 text-base font-semibold text-gray-500 z-50">
+  <!-- Features Menu -->
+
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Features ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 3</button>
+      </div>
+  </div>
+
+  <!-- Libraries Menu -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Libraries ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 3</button>
+      </div>
+  </div>
+
+  <a href="#" class="p-2 md:p-6">Blog News</a>
+  <a href="#" class="p-2 md:p-6">Document</a>
+</nav>
+
+<!-- Right: Language & Button -->
+<div class="flex items-center space-x-4">
+  <!-- Language -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+    <button class="flex items-center space-x-1 text-base">
+      <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3 object-cover" alt="VN">
+      <span class="hidden md:inline">VN ▾</span>
+    </button>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">VN</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">EN</button>
+         
+      </div>
+  </div>
+
+  <!-- Download Button -->
+  <a href="#" class="bg-primary hover:bg-blue-700 text-white text-sm md:text-base px-4 py-2 rounded font-semibold">
+    Tải xuống miễn phí
+  </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button id="menu-toggle" class="md:hidden flex items-center ml-4" onclick="toggleMobileMenu()">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
+
+<!-- Modal Menu (Hidden by default) for Mobile -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+<div id="menu-modal" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+  <div class="p-6">
+    <nav class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-700 font-semibold">Features</a>
+      <a href="#" class="text-gray-700 font-semibold">Libraries</a>
+      <a href="#" class="text-gray-700 font-semibold">Blog News</a>
+      <a href="#" class="text-gray-700 font-semibold">Document</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  // Menu toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuModal = document.getElementById("menu-modal");
+  const overlay = document.getElementById("overlay");
+
+  if (menuToggle && menuModal) {
+    menuToggle.addEventListener("click", function () {
+      menuModal.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    overlay.addEventListener("click", function () {
+      menuModal.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  }
+</script>
+
+  </header>
+  
+    <section class="bg-primary-light px-6 py-20 lg:px-48">
+      <div class="mx-auto space-y-6">
+        <!-- Breadcrumb -->
+        <nav class="text-base font-semibold text-gray-500 mb-4 space-x-1">
+          <span>Marketplace</span>
+          <span>›</span>
+          <a href="#" class="text-primary hover:underline">Themes</a>
+        </nav>
+    
+        <!-- Heading -->
+        <h1 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug mb-4">
+          Professional CMS Full Form Themes
+        </h1>
+    
+        <!-- Subheading -->
+        <p class="text-gray-500 text-lg max-w-3xl mb-6">
+          Discover a beautiful custom design for your publication
+        </p>
+      </div>
+    </section>
+    
+
+    <section class="px-6 py-20 lg:px-48 bg-white">
+      <!-- Tiêu đề + nút -->
+      <div class="bg-white py-4 md:py-16">
+        <div class="mx-auto w-full py-8">
+      
+          <!-- Desktop (md+) -->
+          <div class="hidden md:flex flex-wrap items-center justify-between gap-4">
+            <!-- Danh mục dạng ul -->
+            <ul class="flex flex-wrap gap-4 text-base text-gray-500">
+              <li><a href="#" class="text-lg text-primary font-medium">All</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Newsletter</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Blog</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">News</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Magazine</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Podcast</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Photography</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Portfolio</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Docs</a></li>
+              <li><a href="#" class="text-lg hover:text-gray-800">Official</a></li>
+            </ul>
+      
+            <!-- Sắp xếp dạng button -->
+            <div class="flex gap-4 text-sm text-gray-500">
+              <div class="relative">
+                <button id="paid-free-btn" class="hover:text-gray-800 flex items-center gap-1 text-lg">
+                  Paid + Free
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <!-- Dropdown for Paid + Free -->
+                <div id="paid-free-dropdown" class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg hidden">
+                  <ul class="py-1 text-sm">
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 1</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 2</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            
+              <div class="relative">
+                <button id="trending-btn" class="hover:text-gray-800 flex items-center gap-1 text-lg">
+                  Trending
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <!-- Dropdown for Trending -->
+                <div id="trending-dropdown" class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg hidden">
+                  <ul class="py-1 text-sm">
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Trending Option 1</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Trending Option 2</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Trending Option 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+          <!-- Mobile (<md): dropdowns -->
+          <div class="block md:hidden px-4">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <!-- Dropdown danh mục -->
+              <select class="border border-gray-300 rounded px-4 py-2 text-sm text-gray-600 w-full sm:flex-1">
+                <option>All</option>
+                <option>Newsletter</option>
+                <option>Blog</option>
+                <option>News</option>
+                <option>Magazine</option>
+                <option>Podcast</option>
+                <option>Photography</option>
+                <option>Portfolio</option>
+                <option>Docs</option>
+                <option>Official</option>
+              </select>
+      
+              <!-- Dropdown sắp xếp -->
+              <select class="border border-gray-300 rounded px-4 py-2 text-sm text-gray-600 w-full sm:w-40">
+                <option>Paid + Free</option>
+                <option>Paid only</option>
+                <option>Free only</option>
+                <option>Trending</option>
+                <option>Newest</option>
+              </select>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    
+      <!-- Danh sách theme -->
+    
+     
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+    
+       
+     
+      <!-- Pagination -->
+      <div class="flex items-center justify-center space-x-2 text-base text-gray-500 py-6 select-none">
+    <!-- Prev -->
+    <button class="hover:text-gray-800 px-4">Prev</button>
+
+    <!-- Page numbers -->
+    <button class="w-12 h-12 rounded-full bg-primary text-white font-medium">1</button>
+    <button class="w-12 h-12 rounded-full hover:bg-gray-100">2</button>
+    <button class="w-12 h-12 rounded-full hover:bg-gray-100">3</button>
+    <span class="px-1">...</span>
+    <button class="w-12 h-12 rounded-full hover:bg-gray-100">10</button>
+
+    <!-- Next -->
+    <button class="hover:text-gray-800 px-4">Next</button>
+</div>
+      
+    </section>
+    
+    
+    
+    
+       
+    <footer class="bg-white border-t pt-12 px-6 lg:px-48">
+      <div class="mx-auto flex  flex-col md:flex-row gap-8 pb-10 justify-between">
+    <!-- Logo + Newsletter -->
+    <div class="flex-1 space-y-10">
+      <div class="flex items-center space-x-2">
+        <img src="image/bds/Logo-f.png" alt="CMS Logo" />
+      </div>
+
+      <div>
+        <h4 class="text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Subscribe to our newsletter</h4>
+        <p class="text-gray-500 text-lg mb-4">
+          Want to stay up to date with news, updates & strategy about our product? Subscribe now!
+        </p>
+      </div>
+
+      <form class="flex border-b border-gray-300 max-w-sm">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-2 py-2 outline-none text-sm" />
+        <button type="submit" class="text-primary text-base md:text-xl font-semibold hover:underline whitespace-nowrap">
+          SUBSCRIBE NOW
+        </button>
+      </form>
+    </div>
+
+    <!-- Company + Resources -->
+    <div class="flex md:justify-evenly flex-1 gap-16">
+      <!-- Company -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Company</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Trang chủ</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Tính năng</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Resources</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Templates</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Plugin</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Help center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex-1 text-left">
+      <div class="ml-auto">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Contact</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li class="text-lg text-gray-500 font-medium">(84) 123 456 789</li>
+          <li class="text-lg text-gray-500 font-medium">www.example.com</li>
+          <li class="text-lg text-gray-500 font-medium">example@gmail.com</li>
+          <li class="text-lg text-gray-500 font-medium">901 W. Foothill Blvd, Suite A Upland, CA 91786</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t pt-4 pb-6 text-center text-lg text-gray-500 flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0">
+    <span>Copyright © 2025 CMS Full Form. All rights reserved</span>
+    <div class="space-x-3 mt-2 md:mt-0">
+      <a href="#" class="hover:text-gray-600">User Term & Conditions</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+    </div>
+  </div>
+    </footer>
+    
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function toggleFAQ(button) {
+    const icon = button.querySelector("span");
+    const content = button.nextElementSibling;
+
+    const isOpen = !content.classList.contains("hidden");
+
+    // Đóng tất cả
+    document.querySelectorAll("section [onclick^='toggleFAQ']").forEach(btn => {
+      btn.querySelector("span").textContent = "+";
+      btn.nextElementSibling.classList.add("hidden");
+    });
+
+    // Mở cái được click nếu nó đang đóng
+    if (!isOpen) {
+      icon.textContent = "−";
+      content.classList.remove("hidden");
+    }
+  }
+
+      // JavaScript để điều khiển hiển thị/ẩn dropdown khi nhấn vào button
+  
+    // Lấy các phần tử
+    const paidFreeBtn = document.getElementById("paid-free-btn");
+    const trendingBtn = document.getElementById("trending-btn");
+    const paidFreeDropdown = document.getElementById("paid-free-dropdown");
+    const trendingDropdown = document.getElementById("trending-dropdown");
+  
+    // Xử lý sự kiện click vào Paid + Free button
+    paidFreeBtn.addEventListener("click", () => {
+      // Kiểm tra và toggle hiển thị dropdown
+      paidFreeDropdown.classList.toggle("hidden");
+      // Ẩn dropdown Trending nếu nó đang mở
+      trendingDropdown.classList.add("hidden");
+    });
+  
+    // Xử lý sự kiện click vào Trending button
+    trendingBtn.addEventListener("click", () => {
+      // Kiểm tra và toggle hiển thị dropdown
+      trendingDropdown.classList.toggle("hidden");
+      // Ẩn dropdown Paid + Free nếu nó đang mở
+      paidFreeDropdown.classList.add("hidden");
+    });
+  
+    // Đóng dropdown khi nhấn ngoài các dropdown
+    document.addEventListener("click", (e) => {
+      if (!paidFreeBtn.contains(e.target) && !paidFreeDropdown.contains(e.target)) {
+        paidFreeDropdown.classList.add("hidden");
+      }
+      if (!trendingBtn.contains(e.target) && !trendingDropdown.contains(e.target)) {
+        trendingDropdown.classList.add("hidden");
+      }
+    });
+
+     
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- Wrapper -->
+
+<style>
+    .\!text-gray-500 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1)) /* #6b7280 */ !important;
+}
+
+</style>
+<section class="bg-primary-light py-16 px-6 lg:px-48 bg-white">
+    <div class="w-full relative">
+        <!-- Slider chính -->
+        <div class="swiper mainSwiper relative ">
+            <div class="swiper-wrapper border-2 border-gray-200 rounded-2xl">
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/2/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/3/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/4/1520/855" class=" rounded-2xl w-full" />
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <!-- Nút Prev -->
+
+
+            <!-- Thumbnails -->
+            <div class="swiper thumbSwiper mt-4 w-1/2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden aspect-square">
+                        <img src="https://picsum.photos/id/1/220/220" class="w-full h-full object-cover " />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/2/220/220" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/3/220/220" class="w-full h-full  object-cover" />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/4/220/220" class="w-full h-full  object-cover" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Wrapper chứa 2 nút -->
+        <div class="absolute top-[40%] left-0 right-0 z-20 -translate-y-1/2 flex justify-between px-0">
+
+           <!-- Nút Prev -->
+            <div class="cts-swiper-button-prev 
+            -translate-x-1/2 
+            bg-white border border-gray-400 !text-gray-500 
+             lg:p-2 
+            flex items-center justify-center rounded-full shadow-md 
+            hover:text-black hover:shadow-lg transition-all duration-300">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M28.7402 9.80527C29.4503 10.5153 29.4503 11.6665 28.7402 12.3766L19.1168 22L28.7402 31.6235C29.4503 32.3335 29.4503 33.4847 28.7402 34.1947C28.0302 34.9048 26.879 34.9048 26.1689 34.1947L15.2598 23.2857C14.5498 22.5756 14.5498 21.4244 15.2598 20.7144L26.1689 9.80527C26.879 9.09522 28.0302 9.09522 28.7402 9.80527Z" fill="#808090"/>
+                </svg>
+                
+                
+            </div>
+
+            <!-- Nút Next -->
+            <div class="cts-swiper-button-next 
+            translate-x-1/2 
+            bg-white border border-gray-400 !text-gray-500 
+             lg:p-2 
+            flex items-center justify-center rounded-full shadow-md 
+            hover:text-black hover:shadow-lg transition-all duration-300">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2596 9.80527C15.9696 9.09522 17.1208 9.09522 17.8309 9.80527L28.74 20.7144C29.45 21.4244 29.45 22.5756 28.74 23.2857L17.8309 34.1947C17.1208 34.9048 15.9696 34.9048 15.2596 34.1947C14.5495 33.4847 14.5495 32.3335 15.2596 31.6235L24.883 22L15.2596 12.3766C14.5495 11.6665 14.5495 10.5153 15.2596 9.80527Z" fill="#808090"/>
+                </svg>
+                
+            </div>
+
+        
+        </div>
+       
+    </div>
+
+</section>
+
+<script>
+    // Khởi tạo thumbnail swiper
+    const thumbSwiper = new Swiper(".thumbSwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+    });
+
+    // Khởi tạo main swiper
+    const mainSwiper = new Swiper(".mainSwiper", {
+        spaceBetween: 10,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".cts-swiper-button-next",
+            prevEl: ".cts-swiper-button-prev",
+        },
+        thumbs: {
+            swiper: thumbSwiper,
+        },
+    });
+
+    // OPTIONAL: Nếu slider nằm trong tab/toggle hoặc render động
+    // Gọi cập nhật lại Swiper khi slider hiển thị
+    function updateSwipers() {
+        setTimeout(() => {
+            mainSwiper.update();
+            thumbSwiper.update();
+        }, 100); // delay nhẹ để DOM render xong
+    }
+
+    // Example: khi click tab để hiển thị slider
+    const tabBtn = document.querySelector('#your-tab-btn'); // thay selector bằng cái bạn dùng
+    if (tabBtn) {
+        tabBtn.addEventListener('click', () => {
+            updateSwipers();
+        });
+    }
+
+    // Hoặc nếu dùng Alpine.js, JS toggle, v.v → gọi updateSwipers() khi visible
+</script>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS - Plug</title>
+  <link rel="stylesheet" href="assets/css/cms-plug_styles.css">
+  <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/css/swiper/cms-plug_swiper-bundle.min.css" />
+  <!-- cnd tailwind -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+ 
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="w-full lg:px-48 px-6 py-6 bg-white shadow-md flex items-center justify-between ">
+    <img src="image/bds/logo.png" alt="Logo" class="w-20 md:w-28" /> <!-- Logo sẽ nhỏ lại trên mobile -->
+<!-- Menu (Desktop) -->
+<nav class="hidden md:flex items-center lg:space-x-6 text-base font-semibold text-gray-500 z-50">
+  <!-- Features Menu -->
+
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Features ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 3</button>
+      </div>
+  </div>
+
+  <!-- Libraries Menu -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Libraries ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 3</button>
+      </div>
+  </div>
+
+  <a href="#" class="p-2 md:p-6">Blog News</a>
+  <a href="#" class="p-2 md:p-6">Document</a>
+</nav>
+
+<!-- Right: Language & Button -->
+<div class="flex items-center space-x-4">
+  <!-- Language -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+    <button class="flex items-center space-x-1 text-base">
+      <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3 object-cover" alt="VN">
+      <span class="hidden md:inline">VN ▾</span>
+    </button>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">VN</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">EN</button>
+         
+      </div>
+  </div>
+
+  <!-- Download Button -->
+  <a href="#" class="bg-primary hover:bg-blue-700 text-white text-sm md:text-base px-4 py-2 rounded font-semibold">
+    Tải xuống miễn phí
+  </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button id="menu-toggle" class="md:hidden flex items-center ml-4" onclick="toggleMobileMenu()">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
+
+<!-- Modal Menu (Hidden by default) for Mobile -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+<div id="menu-modal" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+  <div class="p-6">
+    <nav class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-700 font-semibold">Features</a>
+      <a href="#" class="text-gray-700 font-semibold">Libraries</a>
+      <a href="#" class="text-gray-700 font-semibold">Blog News</a>
+      <a href="#" class="text-gray-700 font-semibold">Document</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  // Menu toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuModal = document.getElementById("menu-modal");
+  const overlay = document.getElementById("overlay");
+
+  if (menuToggle && menuModal) {
+    menuToggle.addEventListener("click", function () {
+      menuModal.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    overlay.addEventListener("click", function () {
+      menuModal.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  }
+</script>
+
+  </header>
+
+  <section class="bg-primary-light py-16 px-6 lg:px-48">
+    <div class="max-w-4xl">
+
+      <!-- Breadcrumb -->
+      <nav class="text-base text-gray-500 mb-4 flex items-center gap-1">
+        <a href="#" class="hover:underline">Marketplace</a>
+        <span>›</span>
+        <a href="#" class="hover:underline">Plugin</a>
+        <span>›</span>
+        <a href="#" class="text-primary hover:underline">SVG Import</a>
+      </nav>
+
+      <!-- Tiêu đề -->
+      <h1 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug mb-4">
+        SVG Import
+      </h1>
+
+      <p class="text-gray-500 text-lg max-w-3xl mb-6">
+        Elevate your online presence with Reiros intuitive modern design, crafted to help your agency grow by converting visitors into loyal customers for your subscription-based services, ultimately boosting conversions and revenue.      </p>
+
+      
+      <!-- CTA Buttons -->
+      <div class="flex gap-4 ">
+        <a href="#" class="bg-primary hover:bg-blue-700 text-white font-semibold text-base px-5 py-3 rounded-lg">
+          Install app
+        </a>
+        <a href="#"
+          class="bg-white border border-gray-200 hover:border-gray-300 text-gray-800 font-semibold text-base px-5 py-3 rounded-lg flex items-center gap-1">
+          <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99495 1.71875C7.2223 0.16959 4.60073 -0.147424 2.56489 1.59204C0.362767 3.47358 0.0428187 6.64239 1.7842 8.88319C2.44521 9.73377 3.73536 11.0116 4.97522 12.1819C6.22959 13.3659 7.48108 14.4847 8.09825 15.0313L8.11 15.0417C8.16802 15.0931 8.24026 15.1571 8.30952 15.2093C8.39243 15.2717 8.51145 15.3493 8.67039 15.3967C8.88169 15.4597 9.10881 15.4597 9.32011 15.3967C9.47905 15.3493 9.59807 15.2717 9.68098 15.2093C9.75024 15.1571 9.82248 15.0931 9.8805 15.0417L9.89225 15.0313C10.5094 14.4847 11.7609 13.3659 13.0153 12.1819C14.2551 11.0116 15.5453 9.73377 16.2063 8.88319C17.941 6.651 17.6705 3.45775 15.4177 1.5854C13.3592 -0.125533 10.7656 0.169 8.99495 1.71875ZM8.41955 3.28606C7.12783 1.77593 5.07458 1.4406 3.54913 2.74398C1.95571 4.10544 1.74129 6.35876 2.98057 7.95346C3.55867 8.69736 4.76307 9.89818 6.01523 11.0801C7.18421 12.1834 8.35352 13.2321 8.99525 13.8016C9.63698 13.2321 10.8063 12.1834 11.9753 11.0801C13.2274 9.89818 14.4318 8.69736 15.0099 7.95346C16.2559 6.35015 16.0573 4.08716 14.4493 2.75063C12.8834 1.44916 10.857 1.7826 9.57095 3.28606C9.42702 3.45433 9.21668 3.5512 8.99525 3.5512C8.77382 3.5512 8.56348 3.45433 8.41955 3.28606Z" fill="#33334D"/>
+          </svg>
+          90
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Wrapper -->
+
+<style>
+    .\!text-gray-500 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1)) /* #6b7280 */ !important;
+}
+
+</style>
+<section class="bg-primary-light py-16 px-6 lg:px-48 bg-white">
+    <div class="w-full relative">
+        <!-- Slider chính -->
+        <div class="swiper mainSwiper relative ">
+            <div class="swiper-wrapper border-2 border-gray-200 rounded-2xl">
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/2/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/3/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/4/1520/855" class=" rounded-2xl w-full" />
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <!-- Nút Prev -->
+
+
+            <!-- Thumbnails -->
+            <div class="swiper thumbSwiper mt-4 w-1/2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden aspect-square">
+                        <img src="https://picsum.photos/id/1/220/220" class="w-full h-full object-cover " />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/2/220/220" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/3/220/220" class="w-full h-full  object-cover" />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/4/220/220" class="w-full h-full  object-cover" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Wrapper chứa 2 nút -->
+        <div class="absolute top-[40%] left-0 right-0 z-20 -translate-y-1/2 flex justify-between px-0">
+
+           <!-- Nút Prev -->
+            <div class="cts-swiper-button-prev 
+            -translate-x-1/2 
+            bg-white border border-gray-400 !text-gray-500 
+             lg:p-2 
+            flex items-center justify-center rounded-full shadow-md 
+            hover:text-black hover:shadow-lg transition-all duration-300">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M28.7402 9.80527C29.4503 10.5153 29.4503 11.6665 28.7402 12.3766L19.1168 22L28.7402 31.6235C29.4503 32.3335 29.4503 33.4847 28.7402 34.1947C28.0302 34.9048 26.879 34.9048 26.1689 34.1947L15.2598 23.2857C14.5498 22.5756 14.5498 21.4244 15.2598 20.7144L26.1689 9.80527C26.879 9.09522 28.0302 9.09522 28.7402 9.80527Z" fill="#808090"/>
+                </svg>
+                
+                
+            </div>
+
+            <!-- Nút Next -->
+            <div class="cts-swiper-button-next 
+            translate-x-1/2 
+            bg-white border border-gray-400 !text-gray-500 
+             lg:p-2 
+            flex items-center justify-center rounded-full shadow-md 
+            hover:text-black hover:shadow-lg transition-all duration-300">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2596 9.80527C15.9696 9.09522 17.1208 9.09522 17.8309 9.80527L28.74 20.7144C29.45 21.4244 29.45 22.5756 28.74 23.2857L17.8309 34.1947C17.1208 34.9048 15.9696 34.9048 15.2596 34.1947C14.5495 33.4847 14.5495 32.3335 15.2596 31.6235L24.883 22L15.2596 12.3766C14.5495 11.6665 14.5495 10.5153 15.2596 9.80527Z" fill="#808090"/>
+                </svg>
+                
+            </div>
+
+        
+        </div>
+       
+    </div>
+
+</section>
+
+<script>
+    // Khởi tạo thumbnail swiper
+    const thumbSwiper = new Swiper(".thumbSwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+    });
+
+    // Khởi tạo main swiper
+    const mainSwiper = new Swiper(".mainSwiper", {
+        spaceBetween: 10,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".cts-swiper-button-next",
+            prevEl: ".cts-swiper-button-prev",
+        },
+        thumbs: {
+            swiper: thumbSwiper,
+        },
+    });
+
+    // OPTIONAL: Nếu slider nằm trong tab/toggle hoặc render động
+    // Gọi cập nhật lại Swiper khi slider hiển thị
+    function updateSwipers() {
+        setTimeout(() => {
+            mainSwiper.update();
+            thumbSwiper.update();
+        }, 100); // delay nhẹ để DOM render xong
+    }
+
+    // Example: khi click tab để hiển thị slider
+    const tabBtn = document.querySelector('#your-tab-btn'); // thay selector bằng cái bạn dùng
+    if (tabBtn) {
+        tabBtn.addEventListener('click', () => {
+            updateSwipers();
+        });
+    }
+
+    // Hoặc nếu dùng Alpine.js, JS toggle, v.v → gọi updateSwipers() khi visible
+</script>
+
+
+  <section class="bg-white py-16 px-6 lg:px-48 text-gray-800">
+    <div class="flex items-center gap-3 py-8">
+      <!-- Icon -->
+      <div class="bg-black flex items-center justify-center rounded-2xl overflow-hidden">
+        <!-- Đây là nơi bạn thay thế bằng icon SVG thật nếu có -->
+        <img src="https://picsum.photos/id/1/80/80" alt="SVG Icon" class="" />
+      </div>
+    
+      <!-- Mô tả -->
+      <p class="text-lg font-semibold text-gray-800">
+        Paste SVG code, import to CMS Full Form as native, editable SVG DOM elements.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+      <!-- Nội dung bên trái (2/3) -->
+      <div class="lg:col-span-2 space-y-6">
+        <h2 class="text-2xl md:text-3xl font-semibold">
+          SVG Import: Say goodbye to the 10,000 character limit.
+        </h2>
+
+        <p class="text-gray-500 text-lg">
+          Bring any SVG into your CMS Full Form projects as native, editable elements with SVG Import. Say goodbye to
+          the
+          10,000 character limit on SVGs in CMS Full Form. With SVG Import, simply paste your SVG code directly into CMS
+          Full Form and let the extension automatically generate all the required DOM elements for you.
+        </p>
+
+        <p class="text-gray-500 text-lg">
+          Here's how SVG Import enhances your CMS Full Form design experience:
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2 text-gray-500 text-lg">
+          <li>Simple paste & go: Paste your SVG code and SVG Import takes care of the rest.</li>
+          <li>No More 10,000 Character Limit: Break free from the 10,000 character limit on SVGs in CMS Full Form. SVG
+            Import allows you to work with extensive SVG files without a hitch.</li>
+          <li>Works with All SVGs: Whether it's animated SVGs, gradient SVGs, or ultra-super complex SVGs, SVG Import
+            handles them all with ease.</li>
+          <li>Bind CMS Colors: Seamlessly bind CMS colors to individual shapes within an SVG, extending the dynamic
+            capabilities of your designs.</li>
+          <li>Perfect for Designers and Developers: Whether you're a seasoned developer or a creative designer, SVG
+            Import simplifies the SVG integration process, saving you time and keeping the focus on your design.</li>
+          <li>Maintain SVG Fidelity: Ensure your SVGs are displayed as intended with accurate DOM element generation,
+            preserving the original attributes and styles of your SVG graphics.</li>
+          <li>Quick: SVG Import efficiently handles the DOM element creation, letting you design with SVGs effortlessly.
+          </li>
+          <li>Supports all valid SVG Elements: From basic shapes, paths, to complex illustrations, SVG Import supports a
+            wide range of SVG elements, offering flexibility in your design process.</li>
+
+        </ul>
+
+        <div>
+          <h3 class="text-gray-500 text-lg">App Screenshot Illustrations Credits:</h3>
+          <ul class="list-disc pl-6 text-gray-500 text-lg space-y-1">
+            <li><a href="https://www.figma.com/community/file/1163036056014082231/free-notion-style-scribbles"
+                target="_blank"  class="break-words">https://www.figma.com/community/file/1163036056014082231/free-notion-style-scribbles</a>
+            </li>
+            <li><a href="https://www.figma.com/community/file/86075359223732239/svg-abstract-patterns-illustrations"
+                target="_blank"  class="break-words">https://www.figma.com/community/file/86075359223732239/svg-abstract-patterns-illustrations</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar bên phải -->
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <h4 class="text-2xl font-semibold">Features</h4>
+          <ul class="space-y-4 text-gray-800 text-lg font-semibold">
+            <li class="flex items-center gap-2"><span>
+                <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                    fill="#0A83ED" />
+                </svg>
+              </span>
+              <span>Import SVG code by pasting on canvas</span>
+            </li>
+            <li class="flex items-center gap-2"><span><svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                    fill="#0A83ED" />
+                </svg>
+              </span> <span>No more 10,000 character limit</span></li>
+            <li class="flex items-center gap-2"><span><svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                    fill="#0A83ED" />
+                </svg>
+              </span> <span>Bind CMS fields and Component properties</span></li>
+            <li class="flex items-center gap-2"><span><svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                    fill="#0A83ED" />
+                </svg>
+              </span> <span>Fully editable SVG dom</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-white text-gray-500 text-lg border-b-2 py-6">
+          <h4 class="text-2xl font-semibold mb-2 text-gray-800 flex items-center gap-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 1.81818C5.48131 1.81818 1.81818 5.48131 1.81818 10C1.81818 14.5187 5.48131 18.1818 10 18.1818C14.5187 18.1818 18.1818 14.5187 18.1818 10C18.1818 5.48131 14.5187 1.81818 10 1.81818ZM0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10ZM14.7337 6.6299C15.0888 6.98493 15.0888 7.56053 14.7337 7.91555L9.27919 13.3701C8.92417 13.7251 8.34856 13.7251 7.99354 13.3701L5.26627 10.6428C4.91124 10.2878 4.91124 9.7122 5.26627 9.35718C5.62129 9.00215 6.19689 9.00215 6.55192 9.35718L8.63636 11.4416L13.4481 6.6299C13.8031 6.27488 14.3787 6.27488 14.7337 6.6299Z"
+                fill="#0A83ED" />
+            </svg>
+
+            Approved by CMS Full Form
+          </h4>
+          <p>CMS Full Form has reviewed this app to ensure high quality site development. We do not endorse or certify
+            these apps.</p>
+        </div>
+
+        <div class="space-y-4 text-gray-500">
+          <div class="flex justify-between">
+            <span class="font-semibold text-gray-800 text-xl">Pricing</span>
+            <span class="text-lg text-gray-500">Free</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-semibold text-gray-800 text-xl">Language</span>
+            <span class="text-lg text-gray-500">English</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-semibold text-gray-800 text-xl">Support</span>
+            <span class="text-lg text-gray-500">Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="px-6 py-8 md:py-20 lg:px-48 space-y-6">
+    <!-- Tiêu đề + Xem thêm -->
+    <div class="flex justify-between items-center">
+      <h2 class="text-3xl font-semibold text-gray-800">Plugin tương tự</h2>
+      <a href="#" class="text-base md:text-xl text-primary hover:underline flex items-center gap-1">Xem thêm </a>
+    </div>
+
+    <!-- Grid bài viết -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/3/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Responsive Admin Panel</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 min-h-14 line-clamp-2">
+            The Responsive Admin Panel 
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Card</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/4/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Hubspot</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">SEO</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/5/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">SVG Import</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-600 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Content</span>
+        </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+  </section>
+  
+  <section class="px-6 py-8 md:py-20 lg:px-48 space-y-6">
+    <!-- Tiêu đề + Xem thêm -->
+    <div class="flex justify-between items-center">
+      <h2 class="text-3xl font-semibold text-gray-800">Các plugin khác của Alex Xavier</h2>
+      <a href="#" class="text-base md:text-xl text-primary hover:underline flex items-center gap-1">Xem thêm </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/3/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Responsive Admin Panel</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 min-h-14 line-clamp-2">
+            The Responsive Admin Panel 
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Card</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/4/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Hubspot</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">SEO</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/5/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">SVG Import</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-600 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Content</span>
+        </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+  </section>
+
+
+
+
+  <footer class="bg-white border-t pt-12 px-6 lg:px-48">
+    <div class="mx-auto flex  flex-col md:flex-row gap-8 pb-10 justify-between">
+    <!-- Logo + Newsletter -->
+    <div class="flex-1 space-y-10">
+      <div class="flex items-center space-x-2">
+        <img src="image/bds/Logo-f.png" alt="CMS Logo" />
+      </div>
+
+      <div>
+        <h4 class="text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Subscribe to our newsletter</h4>
+        <p class="text-gray-500 text-lg mb-4">
+          Want to stay up to date with news, updates & strategy about our product? Subscribe now!
+        </p>
+      </div>
+
+      <form class="flex border-b border-gray-300 max-w-sm">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-2 py-2 outline-none text-sm" />
+        <button type="submit" class="text-primary text-base md:text-xl font-semibold hover:underline whitespace-nowrap">
+          SUBSCRIBE NOW
+        </button>
+      </form>
+    </div>
+
+    <!-- Company + Resources -->
+    <div class="flex md:justify-evenly flex-1 gap-16">
+      <!-- Company -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Company</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Trang chủ</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Tính năng</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Resources</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Templates</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Plugin</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Help center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex-1 text-left">
+      <div class="ml-auto">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Contact</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li class="text-lg text-gray-500 font-medium">(84) 123 456 789</li>
+          <li class="text-lg text-gray-500 font-medium">www.example.com</li>
+          <li class="text-lg text-gray-500 font-medium">example@gmail.com</li>
+          <li class="text-lg text-gray-500 font-medium">901 W. Foothill Blvd, Suite A Upland, CA 91786</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t pt-4 pb-6 text-center text-lg text-gray-500 flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0">
+    <span>Copyright © 2025 CMS Full Form. All rights reserved</span>
+    <div class="space-x-3 mt-2 md:mt-0">
+      <a href="#" class="hover:text-gray-600">User Term & Conditions</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+    </div>
+  </div>
+  </footer>
+
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function toggleFAQ(button) {
+      const icon = button.querySelector("span");
+      const content = button.nextElementSibling;
+
+      const isOpen = !content.classList.contains("hidden");
+
+      // Đóng tất cả
+      document.querySelectorAll("section [onclick^='toggleFAQ']").forEach(btn => {
+        btn.querySelector("span").textContent = "+";
+        btn.nextElementSibling.classList.add("hidden");
+      });
+
+      // Mở cái được click nếu nó đang đóng
+      if (!isOpen) {
+        icon.textContent = "−";
+        content.classList.remove("hidden");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

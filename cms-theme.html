@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS - Theme</title>
+  <link rel="stylesheet" href="assets/css/cms-theme_styles.css">
+  <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/css/swiper/cms-theme_swiper-bundle.min.css" />
+
+  <!-- cnd tailwind -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="w-full lg:px-48 px-6 py-6 bg-white shadow-md flex items-center justify-between ">
+    <img src="image/bds/logo.png" alt="Logo" class="w-20 md:w-28" /> <!-- Logo sẽ nhỏ lại trên mobile -->
+<!-- Menu (Desktop) -->
+<nav class="hidden md:flex items-center lg:space-x-6 text-base font-semibold text-gray-500 z-50">
+  <!-- Features Menu -->
+
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Features ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 3</button>
+      </div>
+  </div>
+
+  <!-- Libraries Menu -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Libraries ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 3</button>
+      </div>
+  </div>
+
+  <a href="#" class="p-2 md:p-6">Blog News</a>
+  <a href="#" class="p-2 md:p-6">Document</a>
+</nav>
+
+<!-- Right: Language & Button -->
+<div class="flex items-center space-x-4">
+  <!-- Language -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+    <button class="flex items-center space-x-1 text-base">
+      <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3 object-cover" alt="VN">
+      <span class="hidden md:inline">VN ▾</span>
+    </button>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">VN</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">EN</button>
+         
+      </div>
+  </div>
+
+  <!-- Download Button -->
+  <a href="#" class="bg-primary hover:bg-blue-700 text-white text-sm md:text-base px-4 py-2 rounded font-semibold">
+    Tải xuống miễn phí
+  </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button id="menu-toggle" class="md:hidden flex items-center ml-4" onclick="toggleMobileMenu()">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
+
+<!-- Modal Menu (Hidden by default) for Mobile -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+<div id="menu-modal" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+  <div class="p-6">
+    <nav class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-700 font-semibold">Features</a>
+      <a href="#" class="text-gray-700 font-semibold">Libraries</a>
+      <a href="#" class="text-gray-700 font-semibold">Blog News</a>
+      <a href="#" class="text-gray-700 font-semibold">Document</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  // Menu toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuModal = document.getElementById("menu-modal");
+  const overlay = document.getElementById("overlay");
+
+  if (menuToggle && menuModal) {
+    menuToggle.addEventListener("click", function () {
+      menuModal.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    overlay.addEventListener("click", function () {
+      menuModal.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  }
+</script>
+
+  </header>
+
+
+  <section class="bg-primary-light py-16 px-6 lg:px-48">
+    <div class="">
+
+      <!-- Breadcrumb -->
+      <nav class="text-base text-gray-500 mb-4 space-x-1">
+        <span>Marketplace</span>
+        <span>›</span>
+        <span>Themes</span>
+        <span>›</span>
+        <a href="#" class="text-primary hover:underline">Reiro</a>
+      </nav>
+
+      <!-- Title + Description -->
+      <h1 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug mb-4">Reiro</h1>
+      <p class="text-gray-500 text-lg max-w-3xl mb-6">
+        Elevate your online presence with Reiro’s intuitive modern design, crafted to help your agency grow
+        by converting visitors into loyal customers for your subscription-based services, ultimately boosting
+        conversions and revenue.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-4">
+        <a href="#" class="bg-primary hover:bg-blue-700 text-white font-semibold text-base px-5 py-3 rounded-lg">
+          Purchase for $30
+        </a>
+        <a href="#"
+          class="bg-white border border-gray-200 hover:border-gray-300 text-gray-800 font-semibold text-base px-5 py-3 rounded-lg">
+          Live preview
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Siler-->
+  <!-- Wrapper -->
+
+<style>
+    .\!text-gray-500 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1)) /* #6b7280 */ !important;
+}
+
+</style>
+<section class="bg-primary-light py-16 px-6 lg:px-48 bg-white">
+    <div class="w-full relative">
+        <!-- Slider chính -->
+        <div class="swiper mainSwiper relative ">
+            <div class="swiper-wrapper border-2 border-gray-200 rounded-2xl">
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/2/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/3/1520/855" class=" rounded-2xl w-full" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/4/1520/855" class=" rounded-2xl w-full" />
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <!-- Nút Prev -->
+
+
+            <!-- Thumbnails -->
+            <div class="swiper thumbSwiper mt-4 w-1/2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden aspect-square">
+                        <img src="https://picsum.photos/id/1/220/220" class="w-full h-full object-cover " />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/2/220/220" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/3/220/220" class="w-full h-full  object-cover" />
+                    </div>
+                    <div class="swiper-slide border-2 rounded-2xl overflow-hidden  aspect-square">
+                        <img src="https://picsum.photos/id/4/220/220" class="w-full h-full  object-cover" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Wrapper chứa 2 nút -->
+        <div class="absolute top-[40%] left-0 right-0 z-20 -translate-y-1/2 flex justify-between px-0">
+
+           <!-- Nút Prev -->
+            <div class="cts-swiper-button-prev 
+            -translate-x-1/2 
+            bg-white border border-gray-400 !text-gray-500 
+             lg:p-2 
+            flex items-center justify-center rounded-full shadow-md 
+            hover:text-black hover:shadow-lg transition-all duration-300">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M28.7402 9.80527C29.4503 10.5153 29.4503 11.6665 28.7402 12.3766L19.1168 22L28.7402 31.6235C29.4503 32.3335 29.4503 33.4847 28.7402 34.1947C28.0302 34.9048 26.879 34.9048 26.1689 34.1947L15.2598 23.2857C14.5498 22.5756 14.5498 21.4244 15.2598 20.7144L26.1689 9.80527C26.879 9.09522 28.0302 9.09522 28.7402 9.80527Z" fill="#808090"/>
+                </svg>
+                
+                
+            </div>
+
+            <!-- Nút Next -->
+            <div class="cts-swiper-button-next 
+            translate-x-1/2 
+            bg-white border border-gray-400 !text-gray-500 
+             lg:p-2 
+            flex items-center justify-center rounded-full shadow-md 
+            hover:text-black hover:shadow-lg transition-all duration-300">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2596 9.80527C15.9696 9.09522 17.1208 9.09522 17.8309 9.80527L28.74 20.7144C29.45 21.4244 29.45 22.5756 28.74 23.2857L17.8309 34.1947C17.1208 34.9048 15.9696 34.9048 15.2596 34.1947C14.5495 33.4847 14.5495 32.3335 15.2596 31.6235L24.883 22L15.2596 12.3766C14.5495 11.6665 14.5495 10.5153 15.2596 9.80527Z" fill="#808090"/>
+                </svg>
+                
+            </div>
+
+        
+        </div>
+       
+    </div>
+
+</section>
+
+<script>
+    // Khởi tạo thumbnail swiper
+    const thumbSwiper = new Swiper(".thumbSwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+    });
+
+    // Khởi tạo main swiper
+    const mainSwiper = new Swiper(".mainSwiper", {
+        spaceBetween: 10,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".cts-swiper-button-next",
+            prevEl: ".cts-swiper-button-prev",
+        },
+        thumbs: {
+            swiper: thumbSwiper,
+        },
+    });
+
+    // OPTIONAL: Nếu slider nằm trong tab/toggle hoặc render động
+    // Gọi cập nhật lại Swiper khi slider hiển thị
+    function updateSwipers() {
+        setTimeout(() => {
+            mainSwiper.update();
+            thumbSwiper.update();
+        }, 100); // delay nhẹ để DOM render xong
+    }
+
+    // Example: khi click tab để hiển thị slider
+    const tabBtn = document.querySelector('#your-tab-btn'); // thay selector bằng cái bạn dùng
+    if (tabBtn) {
+        tabBtn.addEventListener('click', () => {
+            updateSwipers();
+        });
+    }
+
+    // Hoặc nếu dùng Alpine.js, JS toggle, v.v → gọi updateSwipers() khi visible
+</script>
+
+
+
+  <section class="py-8 md:py-16 px-6 lg:px-48 bg-white">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+
+      <!-- Left: Content (3/4) -->
+      <div class="lg:col-span-3 space-y-8">
+        <!-- Description -->
+        <p class="text-gray-500 text-lg leading-relaxed">
+          Elevate your business online with the PlanBox CMS Full Form HTML Website Template. This template combines functionality and aesthetic design, offering a responsive layout perfect for showcasing your software’s capabilities. Built with flexibility in mind, it enables seamless customization to align with your branding and business needs. Designed for simplicity, it provides an easy-to-manage website that grows with your business.
+        </p>
+
+        <!-- Key Features -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-3 text-gray-800">Key Features:</h3>
+          <ul class="space-y-2 text-gray-500 text-lg">
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+               Modern & Minimal Design – Clean, stylish, and professional layout for a premium look.
+            </li>
+            
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              Fully Responsive & Mobile-Optimized – Perfectly adapts to all screen sizes for an optimal shopping experience.
+            </li>
+
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              CMS – Easily manage products, categories, and content.
+            </li>
+
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              Fast Loading Speed – Optimized for performance.
+            </li>
+
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              Customizable UI & Components – Flexible sections and layouts.
+            </li>
+
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              SEO & Accessibility Optimized – Rank higher in search engines.
+            </li>
+
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              Smooth Interactions & Animations – Micro-interactions for UX.
+            </li>
+
+            <li class="flex gap-2 items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 4.4107C17.5814 4.73614 17.5814 5.26378 17.2559 5.58921L8.08926 14.7559C7.76382 15.0813 7.23618 15.0813 6.91074 14.7559L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107C3.06951 9.08527 3.59715 9.08527 3.92259 9.4107L7.5 12.9881L16.0774 4.4107C16.4028 4.08527 16.9305 4.08527 17.2559 4.4107Z" fill="#0A83ED"/>
+              </svg>
+                
+              Blog & Content Pages – For storytelling and marketing.
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Pages Included -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-3 text-gray-800">Pages Included</h3>
+          <ul class="list-disc list-inside text-gray-500 text-lg space-y-1">
+            <li>Home page</li>
+            <li>About page</li>
+            <li>Services (CMS)</li>
+            <li>Services Details (CMS)</li>
+            <li>Pricing Plans</li>
+            <li>Blog Page (CMS)</li>
+            <li>Blog Details (CMS)</li>
+            <li>FAQ</li>
+            <li>Contact page</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Cookie Preferences</li>
+            <li>Coming Soon</li>
+          </ul>
+        </div>
+
+        <!-- Utility Pages -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-3 text-gray-800">Utility Pages</h3>
+          <ul class="list-disc list-inside text-gray-500 text-lg space-y-1">
+            <li>Style Guide</li>
+            <li>License</li>
+            <li>Changelog</li>
+            <li>404 Not Found</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Sidebar (1/4) -->
+      <aside class="space-y-10 text-sm text-gray-700">
+
+        <!-- Category -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-2 text-2xl">Category</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text">Magazine</span>
+            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">Docs</span>
+            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">News</span>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-3 text-2xl">Features</h4>
+          <ul class="divide-y divide-gray-200 border rounded-md overflow-hidden text-base">
+            <li class=" toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer ">
+              <span class="flex items-center gap-2">
+                <span class="text-primary">
+                  <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span>
+                Web fonts
+              </span>
+              <span class="text-gray-400">+</span>
+            </li>
+            
+            <!-- Option dropdown -->
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+            
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2"><span class="text-primary"><svg width="16" height="11"
+                    viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span> CSS Grid</span>
+              <span class="text-gray-400">+</span>
+            </li>
+
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2"><span class="text-primary"><svg width="16" height="11"
+                    viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span> Custom 404 page</span>
+              <span class="text-gray-400">+</span>
+            </li>
+
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2"><span class="text-primary"><svg width="16" height="11"
+                    viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span> Responsive Navigation</span>
+              <span class="text-gray-400">+</span>
+            </li>
+
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2"><span class="text-primary"><svg width="16" height="11"
+                    viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span> Symbols</span>
+              <span class="text-gray-400">+</span>
+            </li>
+
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2"><span class="text-primary"><svg width="16" height="11"
+                    viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span> Forms</span>
+              <span class="text-gray-400">+</span>
+            </li>
+
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2"><span class="text-primary"><svg width="16" height="11"
+                    viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.2559 0.410704C15.5814 0.736141 15.5814 1.26378 15.2559 1.58921L6.08926 10.7559C5.76382 11.0813 5.23618 11.0813 4.91074 10.7559L0.744078 6.58921C0.418641 6.26378 0.418641 5.73614 0.744078 5.4107C1.06951 5.08527 1.59715 5.08527 1.92259 5.4107L5.5 8.98811L14.0774 0.410704C14.4028 0.0852667 14.9305 0.0852667 15.2559 0.410704Z"
+                      fill="#0A83ED" />
+                  </svg>
+                </span> Responsive design</span>
+              <span class="text-gray-400">+</span>
+            </li>
+
+            <div class="content-li flex flex-col px-4 py-3 space-y-2 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+              <a href="#" class="text-gray-700">- Option 1</a>
+              <a href="#" class="text-gray-700">- Option 2</a>
+              <a href="#" class="text-gray-700">- Option 3</a>
+            </div>
+
+            <li class="toggle-li flex justify-between items-center px-4 py-3 hover:bg-gray-50 cursor-pointer">
+              <span class="flex items-center gap-2 text-indigo-600">
+                <span>📂</span> Content management system
+              </span>
+              <span class="text-gray-400">+</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Share -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-2 text-2xl">Share</h4>
+          <div class="flex gap-6 text-gray-600 text-lg">
+            <a href="#" class="hover:text-blue-500">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.3332 7.89837C28.3415 8.33337 27.2848 8.62171 26.1832 8.76171C27.3165 8.08504 28.1815 7.02171 28.5882 5.74004C27.5315 6.37004 26.3648 6.81504 25.1215 7.06337C24.1182 5.99504 22.6882 5.33337 21.1282 5.33337C18.1015 5.33337 15.6648 7.79004 15.6648 10.8017C15.6648 11.235 15.7015 11.6517 15.7915 12.0484C11.2465 11.8267 7.22484 9.64837 4.52317 6.33004C4.0515 7.14837 3.77484 8.08504 3.77484 9.09337C3.77484 10.9867 4.74984 12.665 6.20317 13.6367C5.32484 13.62 4.46317 13.365 3.73317 12.9634C3.73317 12.98 3.73317 13.0017 3.73317 13.0234C3.73317 15.68 5.62817 17.8867 8.11317 18.395C7.66817 18.5167 7.18317 18.575 6.67984 18.575C6.32984 18.575 5.9765 18.555 5.64484 18.4817C6.35317 20.6467 8.36317 22.2384 10.7532 22.29C8.89317 23.745 6.5315 24.6217 3.97484 24.6217C3.5265 24.6217 3.0965 24.6017 2.6665 24.5467C5.08817 26.1084 7.95817 27 11.0532 27C21.1132 27 26.6132 18.6667 26.6132 11.4434C26.6132 11.2017 26.6048 10.9684 26.5932 10.7367C27.6782 9.96671 28.5898 9.00504 29.3332 7.89837Z" fill="#808090"/>
+                </svg>
+                
+                
+            </a>
+            <a href="#" class="hover:text-blue-700">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.41 2.66663H4.58972C3.52751 2.66663 2.6665 3.52763 2.6665 4.58984V27.4101C2.6665 28.4723 3.52751 29.3333 4.58972 29.3333H27.41C28.4722 29.3333 29.3332 28.4723 29.3332 27.4101V4.58984C29.3332 3.52763 28.4722 2.66663 27.41 2.66663V2.66663ZM12.1253 22.8229H8.87805V13.0534H12.1253V22.8229ZM10.5018 11.7194H10.4806C9.39095 11.7194 8.6862 10.9692 8.6862 10.0317C8.6862 9.07308 9.41252 8.34371 10.5234 8.34371C11.6342 8.34371 12.3178 9.07308 12.3389 10.0317C12.3389 10.9692 11.6342 11.7194 10.5018 11.7194ZM23.8343 22.8229H20.5874V17.5964C20.5874 16.283 20.1173 15.3872 18.9423 15.3872C18.0453 15.3872 17.5111 15.9914 17.2763 16.5747C17.1904 16.7834 17.1695 17.0752 17.1695 17.3671V22.8229H13.9224C13.9224 22.8229 13.9649 13.9699 13.9224 13.0534H17.1695V14.4366C17.601 13.771 18.3731 12.8241 20.0959 12.8241C22.2323 12.8241 23.8343 14.2204 23.8343 17.2211V22.8229Z" fill="#808090"/>
+                </svg>
+                 
+            </a>
+            <a href="#" class="hover:text-primary">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.8612 2.66663H4.13721C3.32487 2.66711 2.66634 3.32597 2.6665 4.13863V27.8626C2.66699 28.6749 3.32585 29.3335 4.13851 29.3333H16.9113V19.0208H13.4478V14.9843H16.9113V12.0138C16.9113 8.56897 19.0143 6.69397 22.0872 6.69397C23.5591 6.69397 24.8239 6.80367 25.1925 6.85266V10.4531H23.0736C21.4017 10.4531 21.078 11.2475 21.078 12.4135V14.9843H25.0754L24.5545 19.0208H21.078V29.3333H27.8612C28.674 29.3335 29.333 28.6748 29.3332 27.8619C29.3332 27.8618 29.3332 27.8616 29.3332 27.8613V4.13733C29.3328 3.32499 28.6738 2.66646 27.8612 2.66663Z" fill="#808090"/>
+                </svg>
+                   
+            </a>
+            <a href="#" class="hover:text-gray-800">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2656 3.90737C18.7115 2.51083 20.6481 1.73807 22.6583 1.75554C24.6685 1.77301 26.5914 2.5793 28.0128 4.00076C29.4343 5.42223 30.2406 7.34512 30.2581 9.3553C30.2755 11.3655 29.5028 13.3021 28.1062 14.748L28.0942 14.7605L24.0942 18.7603C24.0941 18.7603 24.0942 18.7603 24.0942 18.7603C23.317 19.5378 22.3815 20.1391 21.3516 20.5233C20.3215 20.9075 19.2209 21.0658 18.1244 20.9872C17.0278 20.9087 15.961 20.5952 14.9962 20.0681C14.0315 19.5411 13.1913 18.8126 12.5328 17.9323C12.202 17.4901 12.2924 16.8634 12.7346 16.5326C13.1769 16.2018 13.8036 16.2921 14.1344 16.7344C14.6211 17.385 15.242 17.9234 15.9551 18.313C16.6682 18.7026 17.4567 18.9343 18.2672 18.9923C19.0777 19.0504 19.8912 18.9334 20.6526 18.6494C21.4139 18.3654 22.1052 17.921 22.6797 17.3463L26.6735 13.3526C27.702 12.2845 28.271 10.8557 28.2581 9.37268C28.2452 7.88689 27.6493 6.46562 26.5986 5.41498C25.548 4.36433 24.1267 3.76837 22.6409 3.75546C21.1574 3.74257 19.7282 4.31194 18.66 5.34114L16.372 7.61583C15.9803 8.00521 15.3472 8.00336 14.9578 7.6117C14.5684 7.22004 14.5702 6.58688 14.9619 6.1975L17.2656 3.90737ZM10.649 11.4767C11.679 11.0925 12.7796 10.9342 13.8762 11.0128C14.9727 11.0913 16.0396 11.4047 17.0043 11.9318C17.9691 12.4589 18.8092 13.1874 19.4677 14.0677C19.7985 14.5099 19.7082 15.1366 19.2659 15.4674C18.8237 15.7982 18.197 15.7079 17.8662 15.2656C17.3795 14.615 16.7585 14.0766 16.0454 13.687C15.3323 13.2974 14.5438 13.0657 13.7333 13.0077C12.9228 12.9496 12.1093 13.0666 11.348 13.3506C10.5867 13.6346 9.89531 14.079 9.32084 14.6536L5.3271 18.6474C4.29852 19.7155 3.72952 21.1443 3.7424 22.6273C3.75531 24.1131 4.35127 25.5344 5.40192 26.585C6.45256 27.6357 7.87383 28.2316 9.35962 28.2445C10.8426 28.2574 12.2715 27.6884 13.3396 26.6598L15.6132 24.3862C16.0037 23.9957 16.6369 23.9957 17.0274 24.3862C17.4179 24.7767 17.4179 25.4099 17.0274 25.8004L14.7351 28.0927C13.2891 29.4893 11.3524 30.2619 9.34224 30.2445C7.33206 30.227 5.40917 29.4207 3.9877 27.9992C2.56624 26.5778 1.75995 24.6549 1.74248 22.6447C1.72501 20.6345 2.49777 18.6979 3.89431 17.252L3.90639 17.2394L7.90637 13.2397C8.68359 12.4622 9.61894 11.8609 10.649 11.4767Z" fill="#808090"/>
+                </svg>
+                
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Code: Section “Themes tương tự”  -->
+  <section class="py-8 md:py-16 px-6 lg:px-48 bg-white">
+    <!-- Tiêu đề + Xem thêm -->
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Themes tương tự</h2>
+      <a href="#" class="text-primary text-base md:text-lg font-medium hover:underline flex items-center gap-1">
+        Xem thêm
+      </a>
+    </div>
+    <!-- Danh sách theme -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+  </section>
+
+
+  <!-- Code: Section “Themes liên quan”  -->
+  <section class="py-8 md:py-16 px-6 lg:px-48 bg-white">
+    <!-- Tiêu đề + Xem thêm -->
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Các themes khác của Fueko</h2>
+      <a href="#" class="text-primary text-base md:text-lg font-medium hover:underline flex items-center gap-1">
+        Xem thêm
+      </a>
+    </div>
+
+    <!-- Danh sách theme -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+  </section>
+
+
+
+  <footer class="bg-white border-t pt-12 px-6 lg:px-48">
+    <div class="mx-auto flex  flex-col md:flex-row gap-8 pb-10 justify-between">
+    <!-- Logo + Newsletter -->
+    <div class="flex-1 space-y-10">
+      <div class="flex items-center space-x-2">
+        <img src="image/bds/Logo-f.png" alt="CMS Logo" />
+      </div>
+
+      <div>
+        <h4 class="text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Subscribe to our newsletter</h4>
+        <p class="text-gray-500 text-lg mb-4">
+          Want to stay up to date with news, updates & strategy about our product? Subscribe now!
+        </p>
+      </div>
+
+      <form class="flex border-b border-gray-300 max-w-sm">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-2 py-2 outline-none text-sm" />
+        <button type="submit" class="text-primary text-base md:text-xl font-semibold hover:underline whitespace-nowrap">
+          SUBSCRIBE NOW
+        </button>
+      </form>
+    </div>
+
+    <!-- Company + Resources -->
+    <div class="flex md:justify-evenly flex-1 gap-16">
+      <!-- Company -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Company</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Trang chủ</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Tính năng</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Resources</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Templates</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Plugin</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Help center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex-1 text-left">
+      <div class="ml-auto">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Contact</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li class="text-lg text-gray-500 font-medium">(84) 123 456 789</li>
+          <li class="text-lg text-gray-500 font-medium">www.example.com</li>
+          <li class="text-lg text-gray-500 font-medium">example@gmail.com</li>
+          <li class="text-lg text-gray-500 font-medium">901 W. Foothill Blvd, Suite A Upland, CA 91786</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t pt-4 pb-6 text-center text-lg text-gray-500 flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0">
+    <span>Copyright © 2025 CMS Full Form. All rights reserved</span>
+    <div class="space-x-3 mt-2 md:mt-0">
+      <a href="#" class="hover:text-gray-600">User Term & Conditions</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+    </div>
+  </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function toggleFAQ(button) {
+      const icon = button.querySelector("span");
+      const content = button.nextElementSibling;
+
+      const isOpen = !content.classList.contains("hidden");
+
+      // Đóng tất cả
+      document.querySelectorAll("section [onclick^='toggleFAQ']").forEach(btn => {
+        btn.querySelector("span").textContent = "+";
+        btn.nextElementSibling.classList.add("hidden");
+      });
+
+      // Mở cái được click nếu nó đang đóng
+      if (!isOpen) {
+        icon.textContent = "−";
+        content.classList.remove("hidden");
+      }
+    }
+
+
+    // JavaScript to handle toggle effect on list items
+    document.querySelectorAll('.toggle-li').forEach(item => {
+      item.addEventListener('click', function() {
+        console.log('clicked');
+        // Get the associated dropdown div (next sibling)
+        const options = this.nextElementSibling;
+        
+        // Check if options div is hidden, then toggle visibility
+        if (options && options.classList.contains('hidden')) {
+          // Close any other open dropdowns
+          document.querySelectorAll('.content-li').forEach((otherOptions) => {
+            if (otherOptions !== options) {
+              otherOptions.classList.add('hidden');
+              otherOptions.classList.remove('max-h-96', 'opacity-100');
+            }
+          });
+          
+          // Open the clicked dropdown
+          options.classList.remove('hidden');
+          options.classList.add('max-h-96', 'opacity-100');
+        } else if (options) {
+          // Close the clicked dropdown
+          options.classList.add('hidden');
+          options.classList.remove('max-h-96', 'opacity-100');
+        }
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

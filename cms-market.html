@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS - Market</title>
+    <link rel="stylesheet" href="assets/css/cms-market_styles.css">
+    <!-- cnd tailwind -->
+     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="w-full lg:px-48 px-6 py-6 bg-white shadow-md flex items-center justify-between ">
+      <img src="image/bds/logo.png" alt="Logo" class="w-20 md:w-28" /> <!-- Logo sẽ nhỏ lại trên mobile -->
+<!-- Menu (Desktop) -->
+<nav class="hidden md:flex items-center lg:space-x-6 text-base font-semibold text-gray-500 z-50">
+  <!-- Features Menu -->
+
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Features ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 3</button>
+      </div>
+  </div>
+
+  <!-- Libraries Menu -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Libraries ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 3</button>
+      </div>
+  </div>
+
+  <a href="#" class="p-2 md:p-6">Blog News</a>
+  <a href="#" class="p-2 md:p-6">Document</a>
+</nav>
+
+<!-- Right: Language & Button -->
+<div class="flex items-center space-x-4">
+  <!-- Language -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+    <button class="flex items-center space-x-1 text-base">
+      <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3 object-cover" alt="VN">
+      <span class="hidden md:inline">VN ▾</span>
+    </button>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">VN</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">EN</button>
+         
+      </div>
+  </div>
+
+  <!-- Download Button -->
+  <a href="#" class="bg-primary hover:bg-blue-700 text-white text-sm md:text-base px-4 py-2 rounded font-semibold">
+    Tải xuống miễn phí
+  </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button id="menu-toggle" class="md:hidden flex items-center ml-4" onclick="toggleMobileMenu()">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
+
+<!-- Modal Menu (Hidden by default) for Mobile -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+<div id="menu-modal" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+  <div class="p-6">
+    <nav class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-700 font-semibold">Features</a>
+      <a href="#" class="text-gray-700 font-semibold">Libraries</a>
+      <a href="#" class="text-gray-700 font-semibold">Blog News</a>
+      <a href="#" class="text-gray-700 font-semibold">Document</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  // Menu toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuModal = document.getElementById("menu-modal");
+  const overlay = document.getElementById("overlay");
+
+  if (menuToggle && menuModal) {
+    menuToggle.addEventListener("click", function () {
+      menuModal.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    overlay.addEventListener("click", function () {
+      menuModal.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  }
+</script>
+
+    </header>
+  
+    <section class="w-full  bg-primary-light">
+        <div class=" mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
+          
+          <!-- Left Column -->
+          <div class="md:w-1/2 space-y-6 pl-16 py-20 md:pl-48">
+            <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug mb-4">
+              CMS Full Form Marketplace 
+            </h2>
+            <p class="text-gray-500 text-lg max-w-md mb-6">
+              Các giao diện chuyên nghiệp, tích hợp tùy chỉnh và các chuyên gia đủ năng lực.
+            </p>
+            
+          </div>
+      
+          <!-- Right Column -->
+          <div class="md:w-1/2 flex justify-center ">
+            <img src="image/bds/Group 1.png" alt="Biểu đồ tốc độ CMS" class="w-full max-w-3xl" />
+          </div>
+        </div>
+      
+    </section>
+
+    <section class="px-6 py-20 lg:px-48 bg-white">
+      <!-- Tiêu đề + nút -->
+      <div class="flex items-center justify-between mx-auto mb-8">
+        <h2 class="text-3xl md:text-4xl font-semibold text-gray-700">Themes</h2>
+        <a href="#" class="text-primary text-base font-semibold hover:underline flex items-center gap-1">
+          Xem thêm
+        </a>
+      </div>
+    
+      <!-- Danh sách theme -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+        <img src="https://picsum.photos/id/5/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/6/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/7/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex">
+          <!-- Cột chứa text -->
+          <div class="flex-1 pr-4">
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 min-h-16">Reiro By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • By Fueko • </h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+        
+          <!-- Cột chứa ngôi sao -->
+          <div class="flex flex-col items-end w-28">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            <span>Magazine</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="space-y-2">
+        <img src="https://picsum.photos/id/8/350/532" alt="Reiro Theme" class="w-full rounded-xl shadow">
+        
+        <div class="text-lg text-gray-500 flex justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-700 line-clamp-2 max-w-60  min-h-16">Reiro</h3>
+            <span>By Fueko • <span class="text-green-600 font-medium text-base">$30</span></span>
+          </div>
+          
+          <div class="flex justify-between flex-col items-end">
+            <span class="flex items-center text-yellow-500 text-xl">
+              ★ ★ ★ ★ ★
+            </span>
+            Magazine
+          </div>
+         
+        </div>
+       
+      </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+      
+    </section>
+    
+    <section class="px-6 py-20 lg:px-48 bg-white">
+      <!-- Title + Link -->
+      <div class="flex items-center justify-between  mx-auto mb-8">
+        <h2 class="text-3xl md:text-4xl font-semibold text-gray-700">Plugin</h2>
+        <a href="#" class="text-primary text-base font-semibold hover:underline flex items-center gap-1">
+          Xem thêm 
+        </a>
+      </div>
+    
+      <!-- Plugin Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/3/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Responsive Admin Panel</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 min-h-14 line-clamp-2">
+            The Responsive Admin Panel 
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Card</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/4/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Hubspot</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">SEO</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/5/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">SVG Import</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-600 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Content</span>
+        </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/3/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Responsive Admin Panel</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 min-h-14 line-clamp-2">
+            The Responsive Admin Panel 
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Card</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/4/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Hubspot</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">SEO</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/5/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">SVG Import</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-600 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Content</span>
+        </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/3/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Responsive Admin Panel</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 min-h-14 line-clamp-2">
+            The Responsive Admin Panel 
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Card</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/4/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">Hubspot</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-500 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">SEO</span>
+        </div>
+    </div>
+
+    <!-- Plugin Item -->
+    <div class="border rounded-lg p-8 bg-white shadow-sm hover:shadow transition space-y-6">
+        <div class="flex items-center gap-4 mb-3">
+            <img src="https://picsum.photos/id/5/80/80" alt="Plugin logo" class="rounded-lg" />
+            <h3 class="font-semibold text-gray-800 text-2xl">SVG Import</h3>
+        </div>
+        <p class="text-lg text-gray-500 mb-4 line-clamp-2 min-h-14">
+            The Responsive Admin Panel Plugin for Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the Strapi v5 enhances the usability of the
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                            fill="#B2B2BC" />
+                    </svg>
+                    Alex Xavier
+                </div>
+                <span class="text-green-600 font-medium text-base">• $30</span>
+            </div>
+            <span class="bg-blue-100 text-primary text-sm p-2 rounded-md font-semibold">Content</span>
+        </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+    </section>
+    
+    
+       
+    <footer class="bg-white border-t pt-12 px-6 lg:px-48">
+      <div class="mx-auto flex  flex-col md:flex-row gap-8 pb-10 justify-between">
+    <!-- Logo + Newsletter -->
+    <div class="flex-1 space-y-10">
+      <div class="flex items-center space-x-2">
+        <img src="image/bds/Logo-f.png" alt="CMS Logo" />
+      </div>
+
+      <div>
+        <h4 class="text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Subscribe to our newsletter</h4>
+        <p class="text-gray-500 text-lg mb-4">
+          Want to stay up to date with news, updates & strategy about our product? Subscribe now!
+        </p>
+      </div>
+
+      <form class="flex border-b border-gray-300 max-w-sm">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-2 py-2 outline-none text-sm" />
+        <button type="submit" class="text-primary text-base md:text-xl font-semibold hover:underline whitespace-nowrap">
+          SUBSCRIBE NOW
+        </button>
+      </form>
+    </div>
+
+    <!-- Company + Resources -->
+    <div class="flex md:justify-evenly flex-1 gap-16">
+      <!-- Company -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Company</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Trang chủ</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Tính năng</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Resources</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Templates</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Plugin</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Help center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex-1 text-left">
+      <div class="ml-auto">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Contact</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li class="text-lg text-gray-500 font-medium">(84) 123 456 789</li>
+          <li class="text-lg text-gray-500 font-medium">www.example.com</li>
+          <li class="text-lg text-gray-500 font-medium">example@gmail.com</li>
+          <li class="text-lg text-gray-500 font-medium">901 W. Foothill Blvd, Suite A Upland, CA 91786</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t pt-4 pb-6 text-center text-lg text-gray-500 flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0">
+    <span>Copyright © 2025 CMS Full Form. All rights reserved</span>
+    <div class="space-x-3 mt-2 md:mt-0">
+      <a href="#" class="hover:text-gray-600">User Term & Conditions</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+    </div>
+  </div>
+  </footer>
+    
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function toggleFAQ(button) {
+    const icon = button.querySelector("span");
+    const content = button.nextElementSibling;
+
+    const isOpen = !content.classList.contains("hidden");
+
+    // Đóng tất cả
+    document.querySelectorAll("section [onclick^='toggleFAQ']").forEach(btn => {
+      btn.querySelector("span").textContent = "+";
+      btn.nextElementSibling.classList.add("hidden");
+    });
+
+    // Mở cái được click nếu nó đang đóng
+    if (!isOpen) {
+      icon.textContent = "−";
+      content.classList.remove("hidden");
+    }
+  }
+  </script>
+  
+</body>
+</html>

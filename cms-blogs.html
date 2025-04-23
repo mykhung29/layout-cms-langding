@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS - Blogs</title>
+  <link rel="stylesheet" href="assets/css/cms-blogs_styles.css">
+  <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/css/swiper/cms-blogs_swiper-bundle.min.css" />
+  <!-- cnd tailwind -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="w-full lg:px-48 px-6 py-6 bg-white shadow-md flex items-center justify-between ">
+    <img src="image/bds/logo.png" alt="Logo" class="w-20 md:w-28" /> <!-- Logo sẽ nhỏ lại trên mobile -->
+<!-- Menu (Desktop) -->
+<nav class="hidden md:flex items-center lg:space-x-6 text-base font-semibold text-gray-500 z-50">
+  <!-- Features Menu -->`
+
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Features ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 3</button>
+      </div>
+  </div>
+
+  <!-- Libraries Menu -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Libraries ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 3</button>
+      </div>
+  </div>
+
+  <a href="#" class="p-2 md:p-6">Blog News</a>
+  <a href="#" class="p-2 md:p-6">Document</a>
+</nav>
+
+<!-- Right: Language & Button -->
+<div class="flex items-center space-x-4">
+  <!-- Language -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+    <button class="flex items-center space-x-1 text-base">
+      <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3 object-cover" alt="VN">
+      <span class="hidden md:inline">VN ▾</span>
+    </button>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">VN</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">EN</button>
+         
+      </div>
+  </div>
+
+  <!-- Download Button -->
+  <a href="#" class="bg-primary hover:bg-blue-700 text-white text-sm md:text-base px-4 py-2 rounded font-semibold">
+    Tải xuống miễn phí
+  </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button id="menu-toggle" class="md:hidden flex items-center ml-4" onclick="toggleMobileMenu()">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
+
+<!-- Modal Menu (Hidden by default) for Mobile -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+<div id="menu-modal" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+  <div class="p-6">
+    <nav class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-700 font-semibold">Features</a>
+      <a href="#" class="text-gray-700 font-semibold">Libraries</a>
+      <a href="#" class="text-gray-700 font-semibold">Blog News</a>
+      <a href="#" class="text-gray-700 font-semibold">Document</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  // Menu toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuModal = document.getElementById("menu-modal");
+  const overlay = document.getElementById("overlay");
+
+  if (menuToggle && menuModal) {
+    menuToggle.addEventListener("click", function () {
+      menuModal.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    overlay.addEventListener("click", function () {
+      menuModal.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  }
+</script>
+
+  </header>
+
+
+  <section class="bg-primary-light px-6 py-8 md:py-20 lg:px-48">
+    <div class="">
+      <h1 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug mb-4">Blog</h1>
+      <p class="text-gray-500 text-base max-w-2xl">
+        Stories, insights, and advice that will transform how you design and build for the web.
+      </p>
+    </div>
+  </section>
+
+
+
+  <section class="px-6 py-8 md:py-20 lg:px-48">
+
+    <div class="flex flex-wrap items-center justify-between gap-4 py-12">
+      <!-- Tabs lọc chuyên mục (>= md) -->
+      <div class="hidden md:flex flex-wrap gap-5 text-base text-gray-500 whitespace-nowrap">
+        <button class="text-primary font-semibold">All</button>
+        <button class="hover:text-gray-800">Design</button>
+        <button class="hover:text-gray-800">Development</button>
+        <button class="hover:text-gray-800">Engineering</button>
+        <button class="hover:text-gray-800">Inside CMS Full Form</button>
+        <button class="hover:text-gray-800">Inspiration</button>
+        <button class="hover:text-gray-800">Strategy</button>
+      </div>
+    
+      <!-- Dropdown + Search (dưới md: flex cùng hàng) -->
+      <div class="block md:hidden w-full">
+        <div class="flex gap-3">
+          <!-- Dropdown -->
+          <select class="border border-gray-300 rounded px-4 py-2 text-sm text-gray-500 flex-1">
+            <option>All</option>
+            <option>Design</option>
+            <option>Development</option>
+            <option>Engineering</option>
+            <option>Inside CMS Full Form</option>
+            <option>Inspiration</option>
+            <option>Strategy</option>
+          </select>
+    
+          <!-- Search -->
+          <div class="relative flex-1 ">
+            <input type="text" placeholder="Tìm kiếm"
+              class="w-full pl-4 pr-10 py-2 text-sm rounded-md bg-gray-50 text-gray-700 placeholder-gray-400 border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none" />
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 21l-4.35-4.35M16.65 16.65A7 7 0 1 0 3 10a7 7 0 0 0 13.65 6.65z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Search riêng cho md+ (ẩn dưới md) -->
+      <div class="hidden md:block">
+        <div class="relative">
+          <input type="text" placeholder="Tìm kiếm"
+            class="pl-4 pr-10 py-2 text-sm rounded-md bg-gray-50 text-gray-700 placeholder-gray-400 border border-transparent focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none" />
+          <div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-4.35-4.35M16.65 16.65A7 7 0 1 0 3 10a7 7 0 0 0 13.65 6.65z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Slider Bên Trái (Chiếm 2/3) -->
+      <div class="lg:col-span-2">
+        <!-- Swiper -->
+        <div class="swiper mySwiper relative rounded-xl overflow-hidden shadow-md">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide relative">
+              <img src="https://picsum.photos/1000/600" alt="CMS Full Form Forrester"
+                class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-black bg-opacity-40 p-6 flex flex-col justify-end text-white">
+                <span class="bg-white/20 text-sm px-3 py-1 rounded mb-3 inline-block w-max">Inside CMS Full Form</span>
+                <h2 class="text-lg md:text-xl font-semibold leading-snug mb-1">
+                  CMS Full Form named a Strong Performer in The Forrester Wave™: Content Management Systems, Q1 2025
+                </h2>
+                <p class="text-sm text-gray-200 mb-3">Learn how we believe the CMS market is shifting.</p>
+                <div class="text-sm text-gray-300">
+                  <div class="flex items-center gap-2 mt-2 text-base ">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                        fill="#B2B2BC"></path>
+                    </svg>
+                    Alex Xavier
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide relative">
+              <img src="https://picsum.photos/id/1015/1000/600" alt="Slide 2" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-black bg-opacity-40 p-6 flex flex-col justify-end text-white">
+                <span class="bg-white/20 text-sm px-3 py-1 rounded mb-3 inline-block w-max">Second Highlight</span>
+                <h2 class="text-lg md:text-xl font-semibold leading-snug mb-1">Discover the Future of CMS</h2>
+                <p class="text-sm text-gray-200 mb-3">Explore the cutting-edge trends shaping digital content.</p>
+                <div class="text-sm text-gray-300">
+                  <div class="flex items-center gap-2 mt-2 text-base ">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                        fill="#B2B2BC"></path>
+                    </svg>
+                    Alex Xavier
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide relative">
+              <img src="https://picsum.photos/id/1011/1000/600" alt="Slide 3" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-black bg-opacity-40 p-6 flex flex-col justify-end text-white">
+                <span class="bg-white/20 text-sm px-3 py-1 rounded mb-3 inline-block w-max">Trending Now</span>
+                <h2 class="text-lg md:text-xl font-semibold leading-snug mb-1">Why Headless CMS is Taking Over</h2>
+                <p class="text-sm text-gray-200 mb-3">Developers and marketers are embracing headless solutions.</p>
+                <div class="text-sm text-gray-300">
+                  <div class="flex items-center gap-2 mt-2 text-base ">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                        fill="#B2B2BC"></path>
+                    </svg>
+                    Alex Xavier
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <style>
+            .swiper-pagination-thumnail .swiper-pagination-bullet {
+              width: 12px;
+              height: 12px;
+              border-radius: 9999px;
+              background-color: #9ca3af;
+              opacity: 0.7;
+              transition: all 0.3s ease;
+            }
+
+            .swiper-pagination-thumnail .swiper-pagination-bullet-active {
+              background-color: white;
+              opacity: 1;
+            }
+          </style>
+
+          <!-- Pagination Dots -->
+          <div class="swiper-pagination-thumnail absolute z-10 !left-1/2"></div>
+
+        </div>
+      </div>
+
+
+
+      <!-- Tin Mới Nhất (Bên Phải) -->
+      <div class=" bg-gray-50 p-5 rounded-xl shadow-sm">
+        <h3 class="text-2xl font-bold pt-4 pb-8">Tin Tức Mới Nhất</h3>
+        <div>
+            
+  <ul class="space-y-10">
+    <li class="flex items-start gap-3">
+      <img src="https://picsum.photos/id/0/144/80" class="w-36 rounded object-cover" />
+      <p class="text-xl text-gray-800 leading-tight hover:underline cursor-pointer line-clamp-3">
+        6 web design trends to watch in 2025
+      </p>
+    </li>
+    <li class="flex items-start gap-3">
+      <img src="https://picsum.photos/id/1/144/80" class="w-36 rounded object-cover" />
+      <p class="text-xl text-gray-800 leading-tight hover:underline cursor-pointer line-clamp-3">
+        How to develop motion design principles
+      </p>
+    </li>
+    <li class="flex items-start gap-3">
+      <img src="https://picsum.photos/id/2/144/80" class="w-36 rounded object-cover" />
+      <p class="text-xl text-gray-800 leading-tight hover:underline cursor-pointer line-clamp-3">
+        Introducing the next generation of CMS Full Form Apps and updates to our developer platform
+      </p>
+    </li>
+    <li class="flex items-start gap-3">
+      <img src="https://picsum.photos/id/3/144/80" class="w-36 rounded object-cover" />
+      <p class="text-xl text-gray-800 leading-tight hover:underline cursor-pointer line-clamp-3">
+        11 best fonts for web design
+      </p>
+    </li>
+
+  </ul>
+</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="px-6 py-8 md:py-20 lg:px-48">
+    <h3 class="text-2xl lg:text-3xl font-semibold pt-4 pb-8">Tin phổ biến</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
+      <div class="flex flex-col justify-between h-full order-2 lg:order-1">
+
+        <ul class="flex flex-col justify-between h-full gap-6">
+          <li class="flex items-center gap-6">
+            <img src="https://picsum.photos/id/3/350/200" class="w-52 md:w-72 lg:w-80 rounded object-cover shrink-0"
+              alt="" />
+            <p
+              class="text-xl md:text-2xl lg:text-3xl text-gray-800 font-semibold leading-tight cursor-pointer line-clamp-2">
+              asd asdh asdashd hasdh asdh ashdash dashd ashdh asdh asdh ádh
+            </p>
+          </li>
+
+          <li class="flex items-center gap-6">
+            <img src="https://picsum.photos/id/3/350/200" class="w-52 md:w-72 lg:w-80 rounded object-cover shrink-0"
+              alt="" />
+            <p
+              class="text-xl md:text-2xl lg:text-3xl text-gray-800 font-semibold leading-tight cursor-pointer line-clamp-2">
+              asd asdh asd asdh á hdasdh ashd ashd ashd hasdhh asdh ashdash dashd ashdh asdh asdh ádh
+            </p>
+          </li>
+
+          <li class="flex items-center gap-6">
+            <img src="https://picsum.photos/id/3/350/200" class="w-52 md:w-72 lg:w-80 rounded object-cover shrink-0"
+              alt="" />
+            <p
+              class="text-xl md:text-2xl lg:text-3xl text-gray-800 font-semibold leading-tight cursor-pointer line-clamp-2">
+              asd asdh asd asdh á hdasdh ashd ashd ashd hah dashd hasdh asdh ashdash dashd ashdh asdh asdh ádh
+            </p>
+          </li>
+
+          <li class="flex items-center gap-6">
+            <img src="https://picsum.photos/id/3/350/200" class="w-52 md:w-72 lg:w-80 rounded object-cover shrink-0"
+              alt="" />
+            <p
+              class="text-xl md:text-2xl lg:text-3xl text-gray-800 font-semibold leading-tight cursor-pointer line-clamp-2">
+              asd asdh asd asdh á hdasdh ashd ashd ashd hasdh ashd ash dashd hasdh asdh ashdash dashd ashdh asdh asdh
+              ádh
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Sidebar trái -->
+
+
+      <!-- Bài nổi bật bên phải -->
+      <div class="lg:col-span-1 order-1 lg:order-2">
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-6">
+          <img src="https://picsum.photos/id/4/740/420" alt="Forrester" class="w-full object-cover rounded-md" />
+
+          <div class="flex flex-col justify-center p-6 space-y-4">
+            <span class="text-md text-gray-500 mb-1">Inside CMS Full Form</span>
+            <h2 class="text-md md:text-4xl font-semibold text-gray-800 !leading-snug mb-1 line-clamp-3">
+              CMS Full Form named a Strong Performer in The Forrester Wave™: Content Management Systems, Q1 2025
+            </h2>
+            <p class="text-base text-gray-500 line-clamp-3">
+              Learn how we believe the CMS market is shifting. Learn how we believe the CMS market is shifting. Learn
+              how we believe the CMS market is shifting. Learn how we believe the CMS market is shifting.
+            </p>
+          </div>
+
+
+          <div class="flex items-center gap-2 p-6 mt-2 text-base text-gray-400">
+            <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                fill="#B2B2BC"></path>
+            </svg>
+            Alex Xavier
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="px-6 py-8 md:py-20 lg:px-48 space-y-6">
+    <!-- Tiêu đề + Xem thêm -->
+    <div class="flex justify-between items-center py-4">
+      <h2 class="text-3xl font-semibold text-gray-800">Dành cho bạn</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        CMS Full Form named a Strong Performer in The Forrester Wave™: Content Management Systems, Q1 2025 CCccc
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl  lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        How to develop motion design principles
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        6 web design trends to watch in 2025
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        CMS Full Form named a Strong Performer in The Forrester Wave™: Content Management Systems, Q1 2025 CCccc
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl  lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        How to develop motion design principles
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        6 web design trends to watch in 2025
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        CMS Full Form named a Strong Performer in The Forrester Wave™: Content Management Systems, Q1 2025 CCccc
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl  lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        How to develop motion design principles
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        6 web design trends to watch in 2025
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 py-4">
+    <!-- Card -->
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        CMS Full Form named a Strong Performer in The Forrester Wave™: Content Management Systems, Q1 2025 CCccc
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl  lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        How to develop motion design principles
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <img src="https://picsum.photos/id/4/480/270" class="rounded-md w-full object-cover" />
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-12 md:min-h-16">
+        6 web design trends to watch in 2025
+      </h3>
+      <div class="text-base text-gray-500 flex gap-2 items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z" fill="#B2B2BC"/>
+          </svg>
+          Alex Xavier 
+        </div>
+       
+        
+        <span class="mx-1"></span> Development
+      </div>
+    </div>
+
+    <!-- Card khác... -->
+    <!-- Thêm 2 card còn lại giống trên -->
+</div>
+
+    <div class="flex items-center justify-center space-x-2 text-base text-gray-500 py-6 select-none">
+    <!-- Prev -->
+    <button class="hover:text-gray-800 px-4">Prev</button>
+
+    <!-- Page numbers -->
+    <button class="w-12 h-12 rounded-full bg-primary text-white font-medium">1</button>
+    <button class="w-12 h-12 rounded-full hover:bg-gray-100">2</button>
+    <button class="w-12 h-12 rounded-full hover:bg-gray-100">3</button>
+    <span class="px-1">...</span>
+    <button class="w-12 h-12 rounded-full hover:bg-gray-100">10</button>
+
+    <!-- Next -->
+    <button class="hover:text-gray-800 px-4">Next</button>
+</div>
+  </section>
+
+
+
+
+
+  <footer class="bg-white border-t pt-12 px-6 lg:px-48">
+    <div class="mx-auto flex  flex-col md:flex-row gap-8 pb-10 justify-between">
+    <!-- Logo + Newsletter -->
+    <div class="flex-1 space-y-10">
+      <div class="flex items-center space-x-2">
+        <img src="image/bds/Logo-f.png" alt="CMS Logo" />
+      </div>
+
+      <div>
+        <h4 class="text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Subscribe to our newsletter</h4>
+        <p class="text-gray-500 text-lg mb-4">
+          Want to stay up to date with news, updates & strategy about our product? Subscribe now!
+        </p>
+      </div>
+
+      <form class="flex border-b border-gray-300 max-w-sm">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-2 py-2 outline-none text-sm" />
+        <button type="submit" class="text-primary text-base md:text-xl font-semibold hover:underline whitespace-nowrap">
+          SUBSCRIBE NOW
+        </button>
+      </form>
+    </div>
+
+    <!-- Company + Resources -->
+    <div class="flex md:justify-evenly flex-1 gap-16">
+      <!-- Company -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Company</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Trang chủ</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Tính năng</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Resources</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Templates</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Plugin</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Help center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex-1 text-left">
+      <div class="ml-auto">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Contact</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li class="text-lg text-gray-500 font-medium">(84) 123 456 789</li>
+          <li class="text-lg text-gray-500 font-medium">www.example.com</li>
+          <li class="text-lg text-gray-500 font-medium">example@gmail.com</li>
+          <li class="text-lg text-gray-500 font-medium">901 W. Foothill Blvd, Suite A Upland, CA 91786</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t pt-4 pb-6 text-center text-lg text-gray-500 flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0">
+    <span>Copyright © 2025 CMS Full Form. All rights reserved</span>
+    <div class="space-x-3 mt-2 md:mt-0">
+      <a href="#" class="hover:text-gray-600">User Term & Conditions</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+    </div>
+  </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function toggleFAQ(button) {
+      const icon = button.querySelector("span");
+      const content = button.nextElementSibling;
+
+      const isOpen = !content.classList.contains("hidden");
+
+      // Đóng tất cả
+      document.querySelectorAll("section [onclick^='toggleFAQ']").forEach(btn => {
+        btn.querySelector("span").textContent = "+";
+        btn.nextElementSibling.classList.add("hidden");
+      });
+
+      // Mở cái được click nếu nó đang đóng
+      if (!isOpen) {
+        icon.textContent = "−";
+        content.classList.remove("hidden");
+      }
+    }
+
+
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination-thumnail", // ✅ đúng tên class
+        clickable: true,
+      },
+    });
+
+
+  </script>
+
+</body>
+
+</html>

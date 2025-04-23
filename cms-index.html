@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS - Index</title>
+  <link rel="stylesheet" href="assets/css/cms-index_styles.css">
+  <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/css/swiper/cms-index_swiper-bundle.min.css" />
+  <!-- cnd tailwind -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="w-full lg:px-48 px-6 py-6 bg-white shadow-md flex items-center justify-between ">
+    <img src="image/bds/logo.png" alt="Logo" class="w-20 md:w-28" /> <!-- Logo sẽ nhỏ lại trên mobile -->
+<!-- Menu (Desktop) -->
+<nav class="hidden md:flex items-center lg:space-x-6 text-base font-semibold text-gray-500 z-50">
+  <!-- Features Menu -->
+
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Features ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Feature 3</button>
+      </div>
+  </div>
+
+  <!-- Libraries Menu -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+      <h2 class="">Libraries ▾</h2>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 1</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 2</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">Libraries 3</button>
+      </div>
+  </div>
+
+  <a href="#" class="p-2 md:p-6">Blog News</a>
+  <a href="#" class="p-2 md:p-6">Document</a>
+</nav>
+
+<!-- Right: Language & Button -->
+<div class="flex items-center space-x-4">
+  <!-- Language -->
+  <div class="group relative p-2 lg:p-6  text-gray-500 rounded-lg cursor-pointer">
+    <button class="flex items-center space-x-1 text-base">
+      <img src="https://flagcdn.com/w40/vn.png" class="w-5 h-3 object-cover" alt="VN">
+      <span class="hidden md:inline">VN ▾</span>
+    </button>
+      <!-- Các thẻ con sẽ ẩn đi khi không rê chuột vào -->
+      <div class="absolute left-0 w-full mt-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white shadow-lg">
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">VN</button>
+          <button class="w-full py-2 px-4  text-gray-500 rounded-lg ">EN</button>
+         
+      </div>
+  </div>
+
+  <!-- Download Button -->
+  <a href="#" class="bg-primary hover:bg-blue-700 text-white text-sm md:text-base px-4 py-2 rounded font-semibold">
+    Tải xuống miễn phí
+  </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button id="menu-toggle" class="md:hidden flex items-center ml-4" onclick="toggleMobileMenu()">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
+
+<!-- Modal Menu (Hidden by default) for Mobile -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+<div id="menu-modal" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
+  <div class="p-6">
+    <nav class="flex flex-col space-y-6">
+      <a href="#" class="text-gray-700 font-semibold">Features</a>
+      <a href="#" class="text-gray-700 font-semibold">Libraries</a>
+      <a href="#" class="text-gray-700 font-semibold">Blog News</a>
+      <a href="#" class="text-gray-700 font-semibold">Document</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  // Menu toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuModal = document.getElementById("menu-modal");
+  const overlay = document.getElementById("overlay");
+
+  if (menuToggle && menuModal) {
+    menuToggle.addEventListener("click", function () {
+      menuModal.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    overlay.addEventListener("click", function () {
+      menuModal.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  }
+</script>
+
+  </header>
+
+  <section class="w-full px-6 lg:px-48 lg:!pr-20 py-20 bg-linear">
+    <div class=" mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 gap-8">
+
+      <!-- Left Column -->
+      <div class="lg:w-2/5 space-y-6 w-full">
+        <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug">
+          CMS Full Form - Tốc độ vượt trội nhanh hơn 70 lần Wordpress, Joomla
+        </h2>
+        <p class="text-gray-600 text-base lg:text-lg text-justify">
+          CMS Full Form cho tốc độ tải trang nhanh hơn gấp 70 lần so với WordPress hay Joomla. Không cần plugin nặng,
+          không chờ đợi – chỉ cần hiệu suất mượt mà ngay từ đầu.
+        </p>
+        <div class="flex flex-col space-x-4 ">
+          <div class="flex space-x-4">
+            <a href="#"
+              class="flex align-center gap-2 px-5 py-3 bg-primary hover:bg-blue-700 text-white rounded-lg text-base font-semibold">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.88586 6.32048C5.50251 4.07437 7.55796 2.42424 10.0001 2.42424C12.4422 2.42424 14.4977 4.07437 15.1143 6.32048C16.9592 6.74971 18.3334 8.40341 18.3334 10.3788C18.3334 11.8242 17.5968 13.0972 16.4821 13.8434C16.1344 14.0761 15.6639 13.9829 15.4311 13.6352C15.1984 13.2875 15.2916 12.817 15.6393 12.5843C16.3518 12.1073 16.8183 11.2974 16.8183 10.3788C16.8183 8.99832 15.7627 7.86352 14.4153 7.73872C14.072 7.70693 13.7935 7.44742 13.7376 7.10726C13.4422 5.31036 11.8805 3.9394 10.0001 3.9394C8.11966 3.9394 6.55798 5.31036 6.26258 7.10726C6.20666 7.44742 5.92815 7.70693 5.5849 7.73872C4.23742 7.86352 3.1819 8.99832 3.1819 10.3788C3.1819 11.2974 3.64838 12.1073 4.36088 12.5843C4.70858 12.817 4.80177 13.2875 4.56903 13.6352C4.33629 13.9829 3.86576 14.0761 3.51807 13.8434C2.40332 13.0972 1.66675 11.8241 1.66675 10.3788C1.66675 8.40341 3.04092 6.74971 4.88586 6.32048ZM10.0001 9.24243C10.4185 9.24243 10.7577 9.5816 10.7577 10V14.9892L12.4947 13.2522C12.7906 12.9563 13.2702 12.9563 13.5661 13.2522C13.8619 13.548 13.8619 14.0277 13.5661 14.3236L10.5358 17.3539C10.2399 17.6497 9.76025 17.6497 9.4644 17.3539L6.43409 14.3236C6.13824 14.0277 6.13824 13.548 6.43409 13.2522C6.72994 12.9563 7.20961 12.9563 7.50547 13.2522L9.24251 14.9892V10C9.24251 9.5816 9.58168 9.24243 10.0001 9.24243Z"
+                  fill="white" />
+              </svg>
+
+              Tải xuống miễn phí
+            </a>
+
+            <a href="#" class="px-5 py-3 bg-primary hover:bg-blue-700 text-white rounded-lg text-base font-semibold">
+              Xem demo online
+            </a>
+          </div>
+
+          <!-- Slider Arrows -->
+          <div class="flex space-x-6 mt-32">
+            <svg id="custom-prev" width="18" height="14" viewBox="0 0 18 14" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L3.41421 6H17C17.5523 6 18 6.44772 18 7C18 7.55228 17.5523 8 17 8H3.41421L7.70711 12.2929C8.09763 12.6834 8.09763 13.3166 7.70711 13.7071C7.31658 14.0976 6.68342 14.0976 6.29289 13.7071L0.292893 7.70711C-0.0976311 7.31658 -0.0976311 6.68342 0.292893 6.29289L6.29289 0.292893C6.68342 -0.0976311 7.31658 -0.0976311 7.70711 0.292893Z"
+                fill="#33334D" />
+            </svg>
+
+            <svg id="custom-next" width="18" height="14" viewBox="0 0 18 14" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.2929 0.292893C10.6834 -0.0976311 11.3166 -0.0976311 11.7071 0.292893L17.7071 6.29289C18.0976 6.68342 18.0976 7.31658 17.7071 7.70711L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L14.5858 8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H14.5858L10.2929 1.70711C9.90237 1.31658 9.90237 0.683417 10.2929 0.292893Z"
+                fill="#33334D" />
+            </svg>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <!-- Slide Wrapper -->
+      <div class="lg:w-3/5 w-full">
+        <div class="swiper imageSlider rounded-xl max-w-full">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://picsum.photos/id/1/955/570" alt="Slide 1"
+                class="w-full h-auto rounded-xl object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://picsum.photos/id/2/955/570" alt="Slide 2"
+                class="w-full h-auto rounded-xl object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://picsum.photos/id/3/955/570" alt="Slide 3"
+                class="w-full h-auto rounded-xl object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://picsum.photos/id/4/955/570" alt="Slide 4"
+                class="w-full h-auto rounded-xl object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://picsum.photos/id/5/955/570" alt="Slide 5"
+                class="w-full h-auto rounded-xl object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination-cts mt-8 flex"></div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Slider Dots -->
+    <!-- <div class="flex justify-center mt-10 space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+        </div> -->
+  </section>
+
+  <section class="px-6 py-20 lg:px-48 bg-white text-center">
+    <!-- Tiêu đề -->
+    <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug mb-4">Các tính năng nổi bật</h2>
+    <p class="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-12">
+      Trang bị cho bạn một hệ thống quản lý nội dung trực quan, mạnh mẽ và dễ dùng, cho phép tạo, chỉnh sửa và xuất bản
+      nội dung nhanh chóng mà không cần kỹ năng lập trình.
+    </p>
+
+    <!-- Grid tính năng -->
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
+
+      <!-- Item Active -->
+
+
+
+      <!-- Item -->
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="80" height="80" viewBox="0 0 80 80" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M60 6.5H20C10.4875 6.5 2.75 14.24 2.75 23.75V56.25C2.75 65.7625 10.4875 73.5 20 73.5H60C69.5125 73.5 77.25 65.76 77.25 56.25V23.75C77.25 14.2375 69.5125 6.5 60 6.5ZM20 11H60C67.03 11 72.75 16.7175 72.75 23.75V24.9375H7.25V23.75C7.25 16.72 12.97 11 20 11ZM60 69H20C12.97 69 7.25 63.2825 7.25 56.25V29.4375H72.75V56.25C72.75 63.2825 67.03 69 60 69Z" />
+          <path
+            d="M16.7325 20.025C17.8675 20.025 18.79 19.105 18.79 17.9675C18.79 16.8325 17.87 15.91 16.7325 15.91C15.5975 15.91 14.675 16.83 14.675 17.9675C14.6775 19.105 15.5975 20.025 16.7325 20.025Z" />
+          <path
+            d="M23.3151 20.0275C24.4514 20.0275 25.3726 19.1064 25.3726 17.97C25.3726 16.8337 24.4514 15.9125 23.3151 15.9125C22.1787 15.9125 21.2576 16.8337 21.2576 17.97C21.2576 19.1064 22.1787 20.0275 23.3151 20.0275Z" />
+          <path
+            d="M29.8973 20.0275C31.0337 20.0275 31.9548 19.1064 31.9548 17.97C31.9548 16.8337 31.0337 15.9125 29.8973 15.9125C28.761 15.9125 27.8398 16.8337 27.8398 17.97C27.8398 19.1064 28.761 20.0275 29.8973 20.0275Z" />
+          <path
+            d="M17.1499 46.625H27.4024C28.6449 46.625 29.6524 45.6175 29.6524 44.375C29.6524 43.1325 28.6449 42.125 27.4024 42.125H17.1499C15.9074 42.125 14.8999 43.1325 14.8999 44.375C14.8999 45.6175 15.9074 46.625 17.1499 46.625Z" />
+          <path
+            d="M43.0199 51.8125H17.1499C15.9074 51.8125 14.8999 52.82 14.8999 54.0625C14.8999 55.305 15.9074 56.3125 17.1499 56.3125H43.0199C44.2624 56.3125 45.2699 55.305 45.2699 54.0625C45.2699 52.82 44.2624 51.8125 43.0199 51.8125Z" />
+        </svg>
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Giao diện quản trị trực quan
+        </h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="76" height="66" viewBox="0 0 76 66"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M32.975 55.325H9.95C7.3575 55.325 5.25 53.205 5.25 50.6V20.4875H64.9V22.925C64.9 24.1675 65.9075 25.175 67.15 25.175C68.3925 25.175 69.4 24.1675 69.4 22.925V9.54997C69.4 4.47747 65.2725 0.347473 60.1975 0.347473H9.95C4.8775 0.347473 0.75 4.47747 0.75 9.54997V50.6C0.75 55.6875 4.8775 59.825 9.9525 59.825H32.9775C34.22 59.825 35.2275 58.8175 35.2275 57.575C35.2275 56.3325 34.2175 55.325 32.975 55.325ZM9.95 4.84997H60.2C62.7925 4.84997 64.9 6.95747 64.9 9.54997V15.985H5.25V9.54997C5.25 6.95747 7.3575 4.84997 9.95 4.84997Z" />
+          <path
+            d="M12.8325 12.3901C13.9261 12.3901 14.8125 11.5036 14.8125 10.4101C14.8125 9.31653 13.9261 8.43005 12.8325 8.43005C11.739 8.43005 10.8525 9.31653 10.8525 10.4101C10.8525 11.5036 11.739 12.3901 12.8325 12.3901Z" />
+          <path
+            d="M19.8098 12.3901C20.9034 12.3901 21.7898 11.5036 21.7898 10.4101C21.7898 9.31653 20.9034 8.43005 19.8098 8.43005C18.7163 8.43005 17.8298 9.31653 17.8298 10.4101C17.8298 11.5036 18.7163 12.3901 19.8098 12.3901Z" />
+          <path
+            d="M26.7874 12.3901C27.8809 12.3901 28.7674 11.5036 28.7674 10.4101C28.7674 9.31653 27.8809 8.43005 26.7874 8.43005C25.6939 8.43005 24.8074 9.31653 24.8074 10.4101C24.8074 11.5036 25.6939 12.3901 26.7874 12.3901Z" />
+          <path
+            d="M72.8599 31.8076C69.7799 28.7226 64.4024 28.7251 61.3224 31.8051L41.3749 51.7526C40.7324 52.3976 40.3124 53.2101 40.1599 54.1101L39.0674 60.5751C38.8324 61.9651 39.2874 63.3901 40.2824 64.3826C41.1049 65.2051 42.2174 65.6601 43.3624 65.6601C43.6049 65.6601 43.8449 65.6376 44.0849 65.6001L50.5574 64.5076C51.4574 64.3526 52.2749 63.9326 52.9099 63.2926L72.8574 43.3451C74.3974 41.8051 75.2449 39.7526 75.2449 37.5751C75.2449 35.3976 74.4024 33.3501 72.8599 31.8076ZM49.8099 60.0701L43.5074 61.3251L44.5599 54.9351L58.8574 40.6376L64.0349 45.8151L49.8099 60.0701ZM69.6774 40.1601L67.2149 42.6276L62.0399 37.4526L64.5074 34.9851C65.1974 34.2951 66.1174 33.9126 67.0924 33.9126C68.0674 33.9126 68.9874 34.2926 69.6774 34.9851C71.1024 36.4126 71.1024 38.7351 69.6774 40.1601Z" />
+        </svg>
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Quản lý nội dung linh hoạt
+        </h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="74" height="74" viewBox="0 0 74 74" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M37 0.125C16.6675 0.125 0.125 16.6675 0.125 37C0.125 57.3325 16.6675 73.875 37 73.875C57.3325 73.875 73.875 57.3325 73.875 37C73.875 16.6675 57.3325 0.125 37 0.125ZM70.03 35.125H56.1525C55.8325 22.3725 52.3 11.535 47.0225 5.4325C59.8275 9.5075 69.2425 21.18 70.03 35.125ZM37 70.125C28.92 70.125 22.07 55.995 21.5975 38.875H52.405C51.93 55.995 45.08 70.125 37 70.125ZM21.5975 35.125C22.07 18.005 28.9225 3.875 37 3.875C45.0775 3.875 51.93 18.005 52.4025 35.125H21.5975ZM26.98 5.4325C21.7025 11.535 18.1675 22.3725 17.8475 35.125H3.97C4.7575 21.18 14.1725 9.5075 26.98 5.4325ZM3.97 38.875H17.8475C18.1675 51.6275 21.7 62.465 26.9775 68.5675C14.1725 64.49 4.7575 52.82 3.97 38.875ZM47.0225 68.5675C52.3 62.4675 55.8325 51.6275 56.1525 38.875H70.03C69.2425 52.82 59.8275 64.49 47.0225 68.5675Z" />
+        </svg>
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Đa ngôn ngữ</h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="80" height="80" viewBox="0 0 80 80" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.2454 76.6668H24.3229C25.7487 76.6668 26.9054 75.5926 26.9054 74.1668C26.9054 72.7409 25.7496 71.6668 24.3229 71.6668H15.2454C11.4237 71.6668 8.33374 68.2751 8.33374 64.3076V27.5001H70.8337V36.9018C70.8337 38.3276 72.3246 39.4843 73.7504 39.4843C75.1762 39.4843 76.6671 38.3284 76.6671 36.9018V15.7451C76.6671 9.0176 70.3446 3.33344 63.6887 3.33344H15.2454C8.57624 3.33344 3.33374 8.90093 3.33374 15.7451V64.3076C3.33374 71.1226 8.57624 76.6668 15.2454 76.6668ZM8.33374 15.7451C8.33374 11.8168 11.4887 8.33344 15.2454 8.33344H63.6887C67.5446 8.33344 70.8337 11.8168 70.8337 15.7451V22.5001H8.33374V15.7451Z" />
+          <path
+            d="M62.023 13.3334H60.9905C59.5646 13.3334 58.408 14.8243 58.408 16.2501C58.408 17.6759 59.5638 19.1668 60.9905 19.1668H62.023C63.4488 19.1668 64.6055 17.6759 64.6055 16.2501C64.6055 14.8243 63.4488 13.3334 62.023 13.3334Z" />
+          <path
+            d="M53.2437 13.3334H52.2112C50.7853 13.3334 49.6287 14.8243 49.6287 16.2501C49.6287 17.6759 50.7845 19.1668 52.2112 19.1668H53.2437C54.6695 19.1668 55.8262 17.6759 55.8262 16.2501C55.8262 14.8243 54.6695 13.3334 53.2437 13.3334Z" />
+          <path
+            d="M43.948 13.3334H42.9155C41.4897 13.3334 40.333 14.8243 40.333 16.2501C40.333 17.6759 41.4888 19.1668 42.9155 19.1668H43.948C45.3738 19.1668 46.5305 17.6759 46.5305 16.2501C46.5305 14.8243 45.3738 13.3334 43.948 13.3334Z" />
+          <path
+            d="M50.8313 39.2792C39.508 39.2792 29.1672 46.3901 25.0005 56.9742C25.0005 56.9742 30.4213 76.9359 50.8313 76.5009C72.3963 76.0417 76.6672 56.9742 76.6672 56.9742C72.5005 46.3901 62.158 39.2792 50.8313 39.2792ZM51.0155 71.3367C42.1538 71.3367 34.0605 65.9726 30.5688 57.8901C34.0597 49.8076 42.1538 44.4434 51.0155 44.4434C59.8797 44.4434 67.9747 49.8076 71.4663 57.8901C67.9755 65.9726 59.8797 71.3367 51.0155 71.3367Z" />
+          <path
+            d="M51.0181 47.871C45.493 47.871 40.998 52.3651 40.998 57.8901C40.998 63.4151 45.493 67.9093 51.0181 67.9093C56.5431 67.9093 61.0372 63.4151 61.0372 57.8901C61.0372 52.3651 56.5431 47.871 51.0181 47.871ZM51.0181 62.7451C48.3405 62.7451 46.1622 60.5668 46.1622 57.8901C46.1622 55.2135 48.3405 53.0351 51.0181 53.0351C53.6955 53.0351 55.873 55.2135 55.873 57.8901C55.873 60.5668 53.6955 62.7451 51.0181 62.7451Z" />
+        </svg>
+
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Xem trước nội dung</h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="80" height="80" viewBox="0 0 80 80" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.4998 19.1666C18.8805 19.1666 19.9998 18.0473 19.9998 16.6666C19.9998 15.2859 18.8805 14.1666 17.4998 14.1666C16.119 14.1666 14.9998 15.2859 14.9998 16.6666C14.9998 18.0473 16.119 19.1666 17.4998 19.1666Z" />
+          <path
+            d="M25.8333 19.1666C27.214 19.1666 28.3333 18.0473 28.3333 16.6666C28.3333 15.2859 27.214 14.1666 25.8333 14.1666C24.4525 14.1666 23.3333 15.2859 23.3333 16.6666C23.3333 18.0473 24.4525 19.1666 25.8333 19.1666Z" />
+          <path
+            d="M34.1665 19.1666C35.5472 19.1666 36.6665 18.0473 36.6665 16.6666C36.6665 15.2859 35.5472 14.1666 34.1665 14.1666C32.7858 14.1666 31.6665 15.2859 31.6665 16.6666C31.6665 18.0473 32.7858 19.1666 34.1665 19.1666Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M75.8332 33.3333V15C75.8332 9.01663 70.9832 4.16663 64.9998 4.16663H14.9998C9.0165 4.16663 4.1665 9.01663 4.1665 15V65C4.1665 70.9833 9.0165 75.8333 14.9998 75.8333H33.3332C34.7132 75.8333 35.8332 74.7133 35.8332 73.3333C35.8332 71.9533 34.7132 70.8333 33.3332 70.8333H14.9998C11.7765 70.8333 9.1665 68.2233 9.1665 65V15C9.1665 11.7766 11.7765 9.16663 14.9998 9.16663H64.9998C68.2232 9.16663 70.8332 11.7766 70.8332 15V33.3333C70.8332 34.7133 71.9532 35.8333 73.3332 35.8333C74.7132 35.8333 75.8332 34.7133 75.8332 33.3333Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M73.3332 24.1666H6.6665C5.2865 24.1666 4.1665 25.2866 4.1665 26.6666C4.1665 28.0466 5.2865 29.1666 6.6665 29.1666H73.3332C74.7132 29.1666 75.8332 28.0466 75.8332 26.6666C75.8332 25.2866 74.7132 24.1666 73.3332 24.1666Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M54.9998 34.1666C43.5032 34.1666 34.1665 43.5033 34.1665 55C34.1665 66.4966 43.5032 75.8333 54.9998 75.8333C66.4965 75.8333 75.8332 66.4966 75.8332 55C75.8332 43.5033 66.4965 34.1666 54.9998 34.1666ZM54.9998 39.1666C63.7398 39.1666 70.8332 46.26 70.8332 55C70.8332 63.74 63.7398 70.8333 54.9998 70.8333C46.2598 70.8333 39.1665 63.74 39.1665 55C39.1665 46.26 46.2598 39.1666 54.9998 39.1666Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M57.4998 62.5V47.5C57.4998 46.12 56.3798 45 54.9998 45C53.6198 45 52.4998 46.12 52.4998 47.5V62.5C52.4998 63.88 53.6198 65 54.9998 65C56.3798 65 57.4998 63.88 57.4998 62.5Z" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M63.4332 52.3999L56.7665 45.7332C55.7898 44.7566 54.2098 44.7566 53.2332 45.7332L46.5665 52.3999C45.5898 53.3732 45.5898 54.9599 46.5665 55.9332C47.5398 56.9099 49.1265 56.9099 50.0998 55.9332L54.9998 51.0366L59.8998 55.9332C60.8731 56.9099 62.4598 56.9099 63.4332 55.9332C64.4098 54.9599 64.4098 53.3732 63.4332 52.3999Z" />
+        </svg>
+
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Xuất bản và gỡ bài</h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="68" height="68" viewBox="0 0 68 68" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0.66626 5.18817V23.9207C0.66626 25.2265 1.86043 26.2848 3.16626 26.2848C4.47209 26.2848 5.66626 25.2265 5.66626 23.9207V8.68067L25.0179 27.9265C25.4796 28.3882 26.1371 28.619 26.7421 28.619C27.3471 28.619 27.9788 28.3882 28.4404 27.9265C29.3638 27.0032 29.3763 25.329 28.4538 24.4065L9.06959 4.83317H24.6088C25.9146 4.83317 26.9729 4.05567 26.9729 2.74984C26.9729 1.444 25.9146 0.666504 24.6096 0.666504H5.87626C3.26959 0.666504 0.66626 2.58067 0.66626 5.18817Z" />
+          <path
+            d="M60.0072 63.1665H44.468C43.1622 63.1665 42.1039 63.944 42.1039 65.2499C42.1039 66.5557 43.1622 67.3332 44.468 67.3332H63.2014C65.808 67.3332 67.333 65.269 67.333 62.6615V43.929C67.333 42.6232 66.5555 41.5649 65.2497 41.5649C63.9439 41.5649 63.1664 42.6232 63.1664 43.929V59.169L43.938 39.9232C43.0147 38.9999 41.5264 38.9999 40.603 39.9232C39.6797 40.8465 39.6839 42.5957 40.6072 43.5182L60.0072 63.1665Z" />
+        </svg>
+
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Khả năng mở rộng</h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg
+          class="text-[#0A83ED] mb-6 group-hover:text-white stroke-current transition-all duration-300 transform group-hover:-translate-y-20"
+          width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_583_543" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="81"
+            height="81">
+            <path d="M0.00170898 0.000495911H80.0017V80.0005H0.00170898V0.000495911Z" fill="white" />
+          </mask>
+          <g mask="url(#mask0_583_543)">
+            <path
+              d="M77.6582 40.0006C77.6582 60.7976 60.7988 77.6569 40.0019 77.6569C19.2046 77.6569 2.3457 60.7976 2.3457 40.0006C2.3457 19.2033 19.2046 2.34437 40.0019 2.34437C60.7988 2.34437 77.6582 19.2033 77.6582 40.0006Z"
+              stroke="currentColor" stroke-width="4.6875" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M55.0641 34.9796C55.0641 43.2984 48.3207 50.0421 40.0016 50.0421C31.6822 50.0421 24.939 43.2984 24.939 34.9796C24.939 26.661 31.6822 19.9173 40.0016 19.9173C48.3207 19.9173 55.0641 26.661 55.0641 34.9796Z"
+              stroke="currentColor" stroke-width="4.6875" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M17.5352 70.2231C18.7398 58.879 28.3386 50.0421 40.0019 50.0421C51.6655 50.0421 61.2641 58.8796 62.4683 70.2234"
+              stroke="currentColor" stroke-width="4.6875" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </g>
+        </svg>
+
+
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Quản lý và phân quyền</h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+      <div class="group h-80 p-6 rounded-xl bg-white border border-gray-200 cursor-pointer 
+        hover:bg-primary text-left transition-all duration-500 
+        hover:-translate-y-1 transform relative overflow-hidden flex flex-col items-start justify-center">
+
+        <svg class="mb-6 transition-all duration-300 transform group-hover:-translate-y-20 
+        group-hover:fill-white fill-[#0A83ED]" width="73" height="74" viewBox="0 0 73 74" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M72.8337 10.7702C72.8337 5.006 68.6079 0.333496 62.8804 0.333496H11.1204C5.39291 0.333496 0.33374 5.006 0.33374 10.7702V63.2293C0.33374 68.9943 5.39291 73.6668 11.1204 73.6668H62.8804C68.6079 73.6668 72.8337 68.9943 72.8337 63.2302V10.7702ZM67.8337 63.3943C67.8337 66.306 66.0079 68.6668 63.2412 68.6668H10.7596C7.99291 68.6668 5.33374 66.306 5.33374 63.3943V10.606C5.33374 7.69433 7.99291 5.3335 10.7596 5.3335H63.2412C66.0079 5.3335 67.8337 7.69433 67.8337 10.606V63.3943Z" />
+          <path
+            d="M62.888 32.6669C62.843 26.1694 57.7155 21.1669 51.1113 21.1669H23.0755C19.5488 21.1669 11.6888 23.9277 11.3005 32.391C11.1621 35.4369 13.2505 44.6044 23.0755 44.5002H34.4205C35.3138 49.5002 40.2296 54.3777 46.1421 54.3777C48.1146 54.3777 49.9746 53.8235 51.613 52.9685L56.3038 57.626C56.808 58.1302 58.6663 59.1877 59.9555 57.601C60.8546 56.4944 60.9638 54.9535 59.9555 53.9452L55.5771 49.5644C57.1013 47.5677 58.0096 45.076 58.0096 42.376C58.0096 42.0927 62.938 39.7085 62.888 32.6669ZM46.1421 49.0785C42.4463 49.0785 39.4388 46.071 39.4388 42.3752C39.4388 38.6794 42.4463 35.6719 46.1421 35.6719C49.838 35.6719 52.8455 38.6794 52.8455 42.3752C52.8455 46.071 49.8388 49.0785 46.1421 49.0785ZM56.413 36.4402C54.358 32.8969 50.5246 30.3077 46.1421 30.3077C40.7471 30.3077 36.1838 34.5002 34.748 38.6669H23.0755C17.4171 38.5627 16.3855 34.0677 16.4596 32.4452C16.7005 27.1969 21.8213 26.1669 23.0755 26.1669H51.1105C54.8188 26.1669 57.7238 28.9827 57.7238 32.5844C57.7238 34.261 57.1021 35.5335 56.413 36.4402Z" />
+          <path
+            d="M22.7988 16.1668H23.8313C25.2571 16.1668 26.4138 14.676 26.4138 13.2502C26.4138 11.8243 25.258 10.3335 23.8313 10.3335H22.7988C21.373 10.3335 20.2163 11.8243 20.2163 13.2502C20.2163 14.676 21.3721 16.1668 22.7988 16.1668Z" />
+          <path
+            d="M14.0195 16.1668H15.052C16.4778 16.1668 17.6345 14.676 17.6345 13.2502C17.6345 11.8243 16.4778 10.3335 15.052 10.3335H14.0195C12.5937 10.3335 11.437 11.8243 11.437 13.2502C11.437 14.676 12.5928 16.1668 14.0195 16.1668Z" />
+          <path
+            d="M23.667 28.2209C22.2412 28.2209 21.167 29.3768 21.167 30.8034V34.4184C21.167 35.8443 22.2412 37.0001 23.667 37.0001C25.0928 37.0001 26.167 35.8443 26.167 34.4176V30.8026C26.167 29.3768 25.0928 28.2209 23.667 28.2209Z" />
+        </svg>
+
+
+
+        <h3 class="font-semibold text-xl text-gray-800 transition-all duration-300 
+            transform translate-y-20 group-hover:-translate-y-20 group-hover:text-white">Tối ưu SEO và hiệu suất</h3>
+
+        <ul class="absolute left-6 right-6 bottom-4 translate-y-8 opacity-0 
+            group-hover:translate-y-0 group-hover:opacity-100 
+            transition-all duration-500 delay-150 
+            text-white text-base space-y-1 list-disc list-inside">
+          <li>Kéo - thả dễ dàng</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+          <li>Thao tác nhanh chóng, tối ưu cho người dùng không chuyên</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="px-6 py-20 lg:px-48 bg-gray-50 text-center ">
+    <!-- Tiêu đề -->
+    <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4">
+      CMS Full Form Flow
+    </h2>
+
+    <!-- Hình ảnh sơ đồ (bạn thay src sau) -->
+    <div class="mt-10 flex justify-center">
+      <img src="image/bds/draw.png" alt="CMS Full Form Flow Diagram" class="max-w-full rounded shadow-md" />
+    </div>
+  </section>
+
+  <section class="px-6 py-20 lg:px-48 bg-white">
+    <div class=" mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+
+      <!-- Cột trái: Tiêu đề + nội dung -->
+      <div class="md:w-1/2 space-y-8 text-center md:text-left">
+        <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug">
+          Tại sao bạn lại chọn <br /> chúng tôi ?
+        </h2>
+        <p class="text-gray-500 text-lg max-w-lg text-justify">
+          Launch a business today with our help and get it done with amazing launch features, websites and more with
+          uifry. We help business like yours thrive every day and beyond.
+        </p>
+
+        <!-- Thống kê -->
+        <div class="flex space-x-8 justify-center md:justify-start">
+
+          <div class="flex justify-center items-center gap-4">
+            <div class="w-14 h-14 rounded-lg bg-primary-lighter flex justify-center items-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8333 0.833252H4.16667C1.86667 0.833252 0 2.69992 0 4.99992V14.9999C0 17.2999 1.86667 19.1666 4.16667 19.1666H15.8333C18.1333 19.1666 20 17.2999 20 14.9999V4.99992C20 2.69992 18.1333 0.833252 15.8333 0.833252ZM4.16667 2.49992H15.8333C17.2083 2.49992 18.3333 3.62492 18.3333 4.99992V6.66659H1.66667V4.99992C1.66667 3.62492 2.79167 2.49992 4.16667 2.49992ZM15.8333 17.4999H4.16667C2.79167 17.4999 1.66667 16.3749 1.66667 14.9999V8.33325H18.3333V14.9999C18.3333 16.3749 17.2083 17.4999 15.8333 17.4999ZM15 4.58325C15 3.89159 15.5583 3.33325 16.25 3.33325C16.9417 3.33325 17.5 3.89159 17.5 4.58325C17.5 5.27492 16.9417 5.83325 16.25 5.83325C15.5583 5.83325 15 5.27492 15 4.58325ZM11.6667 4.58325C11.6667 3.89159 12.225 3.33325 12.9167 3.33325C13.6083 3.33325 14.1667 3.89159 14.1667 4.58325C14.1667 5.27492 13.6083 5.83325 12.9167 5.83325C12.225 5.83325 11.6667 5.27492 11.6667 4.58325ZM8.33333 4.58325C8.33333 3.89159 8.89167 3.33325 9.58333 3.33325C10.275 3.33325 10.8333 3.89159 10.8333 4.58325C10.8333 5.27492 10.275 5.83325 9.58333 5.83325C8.89167 5.83325 8.33333 5.27492 8.33333 4.58325Z"
+                  fill="#0A83ED" />
+              </svg>
+            </div>
+
+            <div class="text-left">
+              <div class=" text-2xl font-bold text-gray-800">100+</div>
+              <div class="text-lg text-gray-500">Successfull Projects</div>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-4">
+            <div class="w-14 h-14 rounded-lg bg-primary-lighter flex justify-center items-center">
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.10154 2.72736C6.59531 2.72736 5.37427 3.9484 5.37427 5.45463C5.37427 6.96087 6.59531 8.18191 8.10154 8.18191C9.60777 8.18191 10.8288 6.96087 10.8288 5.45463C10.8288 3.9484 9.60777 2.72736 8.10154 2.72736ZM3.55609 5.45463C3.55609 2.94425 5.59116 0.90918 8.10154 0.90918C10.6119 0.90918 12.647 2.94425 12.647 5.45463C12.647 7.96502 10.6119 10.0001 8.10154 10.0001C5.59116 10.0001 3.55609 7.96502 3.55609 5.45463ZM12.7134 1.74149C12.9018 1.2761 13.4318 1.05154 13.8972 1.23993C15.5613 1.91355 16.7379 3.5456 16.7379 5.45463C16.7379 7.36367 15.5613 8.99572 13.8972 9.66934C13.4318 9.85773 12.9018 9.63317 12.7134 9.16778C12.525 8.70238 12.7496 8.17239 13.215 7.984C14.2161 7.57874 14.9197 6.59776 14.9197 5.45463C14.9197 4.3115 14.2161 3.33053 13.215 2.92527C12.7496 2.73688 12.525 2.20689 12.7134 1.74149ZM6.70561 11.8183H9.49747C10.3172 11.8183 10.9785 11.8183 11.5167 11.855C12.0701 11.8927 12.5595 11.9723 13.0228 12.1643C14.1366 12.6256 15.0215 13.5105 15.4828 14.6243C15.6747 15.0876 15.7543 15.577 15.7921 16.1304C15.8288 16.6686 15.8288 17.3298 15.8288 18.1496V18.1819C15.8288 18.684 15.4218 19.091 14.9197 19.091C14.4176 19.091 14.0106 18.684 14.0106 18.1819C14.0106 17.3223 14.0101 16.7231 13.9781 16.2541C13.9467 15.7933 13.8879 15.5249 13.803 15.32C13.5262 14.6518 12.9953 14.1209 12.327 13.8441C12.1221 13.7592 11.8538 13.7004 11.393 13.6689C10.924 13.6369 10.3248 13.6365 9.46518 13.6365H6.7379C5.8783 13.6365 5.27912 13.6369 4.81013 13.6689C4.3493 13.7004 4.08094 13.7592 3.87604 13.8441C3.20778 14.1209 2.67685 14.6518 2.40005 15.32C2.31518 15.5249 2.25638 15.7933 2.22494 16.2541C2.19294 16.7231 2.19245 17.3223 2.19245 18.1819C2.19245 18.684 1.78544 19.091 1.28336 19.091C0.781282 19.091 0.374268 18.684 0.374268 18.1819L0.374268 18.1496C0.374261 17.3298 0.374256 16.6686 0.410977 16.1304C0.448735 15.577 0.528339 15.0876 0.72027 14.6243C1.18161 13.5105 2.06649 12.6256 3.18025 12.1643C3.64362 11.9723 4.13296 11.8927 4.68636 11.855C5.22455 11.8183 5.88583 11.8183 6.70561 11.8183ZM15.8575 12.6153C15.9827 12.1291 16.4783 11.8364 16.9645 11.9615C18.9248 12.4661 20.3743 14.2445 20.3743 16.3637V18.1819C20.3743 18.684 19.9673 19.091 19.4652 19.091C18.9631 19.091 18.5561 18.684 18.5561 18.1819V16.3637C18.5561 15.0942 17.6878 14.0251 16.5113 13.7223C16.0251 13.5972 15.7324 13.1016 15.8575 12.6153Z"
+                  fill="#0A83ED" />
+              </svg>
+            </div>
+
+            <div class="text-left">
+              <div class=" text-2xl font-bold text-gray-800">978+</div>
+              <div class="text-lg text-gray-500">Clients Today</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="#"
+          class="inline-block bg-primary hover:bg-blue-700 text-white text-base font-medium px-6 py-3 rounded-lg font-semibold">
+          Bắt đầu - Miễn phí
+        </a>
+      </div>
+
+      <!-- Cột phải: Hình ảnh -->
+      <div class="md:w-1/2 flex justify-center">
+        <img src="image/bds/man.png" alt="Why Choose Us" class="w-full object-contain" />
+      </div>
+
+    </div>
+  </section>
+
+  <section class="px-6 py-20 lg:px-48 bg-gray-50 text-center">
+    <!-- Tiêu đề -->
+    <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4">
+      Nền tảng linh hoạt hỗ trợ các nhà sáng tạo Website
+    </h2>
+    <p class="text-gray-500 text-lg  max-w-2xl mx-auto mb-12">
+      CMS Full Form! là hệ thống quản lý nội dung (CMS) giành giải thưởng, cho phép bạn xây dựng website và ứng dụng
+      trực tuyến mạnh mẽ.
+    </p>
+
+    <!-- 2 Khối tải -->
+    <div class="flex flex-col md:flex-row justify-center gap-8  mx-auto">
+
+      <!-- CMS Block -->
+      <div class="bg-white rounded-xl shadow-sm border text-left w-full md:w-1/2">
+        <div class="p-6 flex flex-col items-center space-y-4">
+          <img src="image/bds/Logo CMS Full Form.png" alt="CMS Full Form" class="object-contain" />
+          <h3 class="text-3xl font-semibold text-gray-800 text-center">Tải CMS Full Form</h3>
+          <p class="text-xl text-gray-500 text-center">CMS đa năng được xây dựng trên Base của PHPFast</p>
+        </div>
+        <div class="bg-primary text-white text-center py-6 rounded-b-xl hover:bg-blue-700 cursor-pointer">
+          <a href="#" class="flex justify-center items-center gap-4 text-2xl font-semibold">
+            Tải ngay
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4.36293 5.58466C5.10291 2.88933 7.56946 0.90918 10.5 0.90918C13.4305 0.90918 15.8971 2.88933 16.6371 5.58466C18.851 6.09974 20.5 8.08418 20.5 10.4546C20.5 12.1891 19.6161 13.7167 18.2784 14.6121C17.8612 14.8914 17.2966 14.7796 17.0173 14.3623C16.738 13.9451 16.8498 13.3805 17.267 13.1012C18.122 12.5289 18.6818 11.5569 18.6818 10.4546C18.6818 8.79808 17.4152 7.43631 15.7982 7.28655C15.3863 7.2484 15.0521 6.93699 14.985 6.5288C14.6305 4.37252 12.7565 2.72736 10.5 2.72736C8.2435 2.72736 6.36948 4.37252 6.015 6.5288C5.94789 6.93699 5.61368 7.2484 5.20178 7.28655C3.58481 7.43631 2.31818 8.79808 2.31818 10.4546C2.31818 11.5569 2.87796 12.5289 3.73296 13.1012C4.15019 13.3805 4.26202 13.9451 3.98274 14.3623C3.70345 14.7796 3.13881 14.8914 2.72158 14.6121C1.38389 13.7167 0.5 12.1891 0.5 10.4546C0.5 8.08418 2.149 6.09974 4.36293 5.58466ZM10.5 9.091C11.0021 9.091 11.4091 9.49801 11.4091 10.0001V15.9872L13.4935 13.9027C13.8486 13.5477 14.4242 13.5477 14.7792 13.9027C15.1342 14.2577 15.1342 14.8333 14.7792 15.1884L11.1428 18.8247C10.7878 19.1798 10.2122 19.1798 9.85718 18.8247L6.22081 15.1884C5.86579 14.8333 5.86579 14.2577 6.22081 13.9027C6.57583 13.5477 7.15144 13.5477 7.50646 13.9027L9.59091 15.9872V10.0001C9.59091 9.49801 9.99792 9.091 10.5 9.091Z"
+                fill="white" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- PHPFast Block -->
+      <div class="bg-white rounded-xl shadow-sm border text-left w-full md:w-1/2">
+        <div class="p-6 flex flex-col items-center space-y-4">
+          <img src="image/bds/Logo php fast.png" alt="PHPFast Framework" class=" object-contain" />
+          <h3 class="text-3xl font-semibold text-gray-800 text-center">Tải PHPFast Framework</h3>
+          <p class="text-xl text-gray-500 text-center">Framework mạnh mẽ với tốc độ nhanh nhẹ và dễ sử dụng</p>
+        </div>
+        <div class="bg-green-500 text-white text-center py-6 rounded-b-xl hover:bg-green-600 cursor-pointer">
+          <a href="#" class="flex justify-center items-center gap-4 text-2xl font-semibold">
+            Tải ngay
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4.36293 5.58466C5.10291 2.88933 7.56946 0.90918 10.5 0.90918C13.4305 0.90918 15.8971 2.88933 16.6371 5.58466C18.851 6.09974 20.5 8.08418 20.5 10.4546C20.5 12.1891 19.6161 13.7167 18.2784 14.6121C17.8612 14.8914 17.2966 14.7796 17.0173 14.3623C16.738 13.9451 16.8498 13.3805 17.267 13.1012C18.122 12.5289 18.6818 11.5569 18.6818 10.4546C18.6818 8.79808 17.4152 7.43631 15.7982 7.28655C15.3863 7.2484 15.0521 6.93699 14.985 6.5288C14.6305 4.37252 12.7565 2.72736 10.5 2.72736C8.2435 2.72736 6.36948 4.37252 6.015 6.5288C5.94789 6.93699 5.61368 7.2484 5.20178 7.28655C3.58481 7.43631 2.31818 8.79808 2.31818 10.4546C2.31818 11.5569 2.87796 12.5289 3.73296 13.1012C4.15019 13.3805 4.26202 13.9451 3.98274 14.3623C3.70345 14.7796 3.13881 14.8914 2.72158 14.6121C1.38389 13.7167 0.5 12.1891 0.5 10.4546C0.5 8.08418 2.149 6.09974 4.36293 5.58466ZM10.5 9.091C11.0021 9.091 11.4091 9.49801 11.4091 10.0001V15.9872L13.4935 13.9027C13.8486 13.5477 14.4242 13.5477 14.7792 13.9027C15.1342 14.2577 15.1342 14.8333 14.7792 15.1884L11.1428 18.8247C10.7878 19.1798 10.2122 19.1798 9.85718 18.8247L6.22081 15.1884C5.86579 14.8333 5.86579 14.2577 6.22081 13.9027C6.57583 13.5477 7.15144 13.5477 7.50646 13.9027L9.59091 15.9872V10.0001C9.59091 9.49801 9.99792 9.091 10.5 9.091Z"
+                fill="white" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="px-6 py-20 lg:px-48 bg-white text-center">
+    <!-- Tiêu đề + mô tả -->
+    <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4">
+      Khám phá CMS Full Form trong 2 phút
+    </h2>
+    <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-10">
+      Quản lý nội dung, tạo biểu mẫu, tích hợp nền tảng – tất cả chỉ trong 2 phút.
+      CMS Full Form dễ dùng cho cả lập trình viên lẫn người không chuyên.
+    </p>
+
+    <!-- Video (thumbnail hoặc iframe thực tế) -->
+    <div class="flex justify-center">
+      <div class="relative w-full max-w-7xl aspect-video rounded-xl overflow-hidden shadow-xl">
+        <!-- Nếu bạn dùng ảnh thumbnail -->
+        <img src="image/bds/bannervideo.png" alt="Video thumbnail" class="w-full h-full object-cover" />
+
+        <!-- Nút play ở giữa -->
+        <button class="absolute inset-0 flex items-center justify-center">
+          <div class="w-16 h-16 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition">
+            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </button>
+
+        <!-- Hoặc nếu muốn dùng video thật -->
+        <!-- 
+          <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/your_video_id" frameborder="0"
+            allowfullscreen></iframe> 
+          -->
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-20 lg:px-48 bg-gray-50">
+    <div class="mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-36">
+
+      <!-- Ảnh: Xuất hiện sau trên mobile, trước trên desktop -->
+      <div class="order-2 md:order-1 md:w-1/2 w-full">
+        <img src="image/bds/codedemo.png" alt="Editor UI" class="w-full rounded-xl shadow-lg" />
+      </div>
+
+      <!-- Nội dung: Xuất hiện trước trên mobile, sau trên desktop -->
+      <div class="order-1 md:order-2 md:w-1/2 w-full text-center md:text-left">
+        <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4 !leading-snug">
+          Tạo và chỉnh sửa nội dung
+          CMS trong bối cảnh
+        </h2>
+        <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+          Chỉnh sửa nội dung CMS trực tiếp trên canvas trực quan của Webflow và xem các thay đổi ngay lập tức – cũng như
+          nhanh chóng tạo các trang đích CMS mới trong Webflow.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Code bảng responsive CMS so sánh:  -->
+  <section class="py-16 px-4 lg:px-48 bg-white text-center">
+    <!-- Tiêu đề -->
+    <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4">CMS Full Form vs Các CMS khác</h2>
+    <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-10">
+      Khám phá lý do CMS Full Form vượt trội so với WordPress, Joomla hay Drupal.
+      Nhanh hơn, bảo mật hơn, dễ dùng hơn – và không cần plugin phức tạp.
+    </p>
+
+    <!-- Table Code bảng responsive CMS so sánh: -->
+    <div class="overflow-x-auto">
+      <table
+        class="w-full table-fixed border-collapse rounded-xl overflow-hidden shadow text-sm md:text-base text-left min-w-[600px]">
+        <thead>
+          <tr>
+            <th class="px-5 py-6 bg-gray-100 border border-gray-200 text-base lg:text-xl font-semibold ">Tiêu chí</th>
+            <th class="px-4 py-4 border border-gray-200 text-center"><img src="https://picsum.photos/55/55"
+                alt="CMS Full Form" class="mx-auto" /></th>
+            <th class="px-4 py-4 border border-gray-200 text-center"><img src="https://picsum.photos/55/55"
+                alt="WordPress" class="mx-auto" /></th>
+            <th class="px-4 py-4 border border-gray-200 text-center"><img src="https://picsum.photos/55/55" alt="Joomla"
+                class="mx-auto" /></th>
+            <th class="px-4 py-4 border border-gray-200 text-center"><img src="https://picsum.photos/55/55" alt="Drupal"
+                class="mx-auto" /></th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr>
+            <td class="px-5 py-6 bg-gray-100 border border-gray-200 text-base lg:text-xl font-semibold ">Tốc độ tải
+              trang</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">⚡ Nhanh hơn gấp 70 lần nhờ kiến
+              trúc nhẹ, không phụ thuộc plugin</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Trung bình, nhiều plugin làm nặng hệ thống
+            </td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Trung bình, cấu trúc phức tạp hơn</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Khá nặng cần tối ưu kỹ</td>
+          </tr>
+          <tr>
+            <td class="px-5 py-6 bg-gray-100 border border-gray-200 text-base lg:text-xl font-semibold ">Bảo mật</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">🔐 Bảo mật nâng cao tích hợp sẵn, không cần
+              cài plugin</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Phụ thuộc plugin bảo mật bên thứ 3</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Bảo mật cơ bản, cần cài thêm</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Mạnh nhưng khó cấu hình</td>
+          </tr>
+          <tr>
+            <td class="px-5 py-6 bg-gray-100 border border-gray-200 text-base lg:text-xl font-semibold ">Giao diện quản
+              trị UX/UI</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">🌿 Kéo-thả trực quan, dễ dùng cho người
+              không chuyên</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Tương đối dễ dùng, nhiều menu</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Khá phức tạp cho người mới</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Giao diện kỹ thuật, khó tiếp cận với người
+              mới</td>
+          </tr>
+          <tr>
+            <td class="px-5 py-6 bg-gray-100 border border-gray-200 text-base lg:text-xl font-semibold ">SEO & Marketing
+            </td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">📈 Tích hợp sẵn công cụ SEO AI + Email
+              Marketing tự động</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Cần cài plugin như Yoast SEO, Mailchimp...
+            </td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Cần cài thêm plugin SEO & marketing</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Hạn chế, cần dev setup thủ công</td>
+          </tr>
+          <tr>
+            <td class="px-5 py-6 bg-gray-100 border border-gray-200 text-base lg:text-xl font-semibold ">Khả năng mở
+              rộng và ổn định
+            </td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">🧩 Công nghệ microservices, dễ mở rộng,
+              hiệu năng cao</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Mở rộng mạnh nhờ plugin, nhưng dễ xung đột
+            </td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Mở rộng ổn, nhưng dễ gặp lỗi</td>
+            <td class="px-5 py-6 border border-gray-200 text-lg text-center">Ổn định cao, nhưng yêu cầu kỹ thuật phức
+              tạp</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <!-- Code HTML trái phải: Tuỳ chỉnh CMS + Logo tools  -->
+  <section class="px-6 py-20 lg:px-48 bg-gray-50">
+    <div class=" mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+
+      <!-- Left: Text content -->
+      <div class="md:w-1/2 text-center md:text-left space-y-6">
+        <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 !leading-snug">
+          Tùy chỉnh hệ thống quản lý nội dung (CMS)
+          và sử dụng các công cụ yêu thích của bạn
+        </h2>
+        <p class="text-gray-500 text-base leading-relaxed font-semibol mx-auto md:mx-0">
+          Tùy chỉnh CMS của bạn để đáp ứng nhu cầu cụ thể của từng dự án và tận dụng thị trường plugin và tích hợp phong
+          phú. Strapi giúp bạn xây dựng website hiện đại với các tính năng như các loại trường dữ liệu độc đáo và thiết
+          kế tùy chỉnh, giúp trang web của bạn luôn sẵn sàng phát triển trong tương lai.<br />
+          Khám phá Thị Trường
+        </p>
+        <a href="#"
+          class="inline-block bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 text-lg font-semibold px-4 py-2 rounded transition">
+          Khám phá marketplace
+        </a>
+      </div>
+
+      <!-- Right: Logo/image group -->
+      <div class="md:w-1/2 w-full flex justify-center">
+        <img src="image/bds/option.png" alt="Logo tích hợp CMS" class="max-w-full w-full object-contain" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Giao diện: Features + Gallery CMS Theme + CTA  -->
+  <section class=" bg-white text-center">
+    <div class="px-6 pt-20 pb-4 lg:px-48">
+      <!-- Features Top: 3 cột -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mx-auto mb-20 lg:mb-52">
+        <div>
+          <div class="flex items-center justify-center text-primary mb-2 t">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="..." />
+            </svg>
+          </div>
+          <h3 class="text-left text-xl font-semibold text-gray-800 flex justify-start items-center gap-3">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5 3.18182C5 1.42455 6.42455 0 8.18182 0C9.93909 0 11.3636 1.42455 11.3636 3.18182V3.63636L11.3948 3.63636C12.0037 3.63636 12.5063 3.63635 12.9178 3.66442C13.3444 3.69353 13.739 3.75583 14.1189 3.91317C15.0099 4.28223 15.7178 4.99014 16.0868 5.88115C16.2442 6.26098 16.3065 6.65562 16.3356 7.08224C16.3488 7.27642 16.3558 7.4909 16.3595 7.72727H16.8182C18.5755 7.72727 20 9.15182 20 10.9091C20 12.6664 18.5755 14.0909 16.8182 14.0909H16.3636V14.7648C16.3636 15.4966 16.3637 16.1006 16.3235 16.5926C16.2817 17.1036 16.1921 17.5733 15.9673 18.0145C15.6187 18.6987 15.0624 19.255 14.3781 19.6037C13.9369 19.8285 13.4672 19.9181 12.9562 19.9598C12.4642 20 11.8603 20 11.1285 20H10.4545C9.95247 20 9.54546 19.593 9.54546 19.0909V17.5C9.54546 16.8724 9.03669 16.3636 8.40909 16.3636C7.7815 16.3636 7.27273 16.8724 7.27273 17.5V19.0909C7.27273 19.593 6.86571 20 6.36364 20H5.23516C4.50338 20 3.89942 20 3.40743 19.9598C2.89643 19.9181 2.4267 19.8285 1.98549 19.6037C1.30126 19.255 0.744971 18.6987 0.396341 18.0145C0.171531 17.5733 0.081927 17.1036 0.0401768 16.5926C-2.07397e-05 16.1006 -1.12037e-05 15.4966 3.92083e-07 14.7648L8.25572e-07 13.1818C8.25572e-07 12.6797 0.407015 12.2727 0.909092 12.2727H2.27273C3.02584 12.2727 3.63636 11.6622 3.63636 10.9091C3.63636 10.156 3.02584 9.54545 2.27273 9.54545H0.909092C0.407015 9.54545 8.25572e-07 9.13844 8.25572e-07 8.63636L6.08828e-07 8.60521C-7.51908e-06 7.99631 -1.4129e-05 7.4937 0.0280597 7.08224C0.0571679 6.65561 0.119471 6.26098 0.276802 5.88115C0.645871 4.99014 1.35378 4.28223 2.24479 3.91317C2.62462 3.75583 3.01925 3.69353 3.44588 3.66442C3.85734 3.63635 4.35994 3.63636 4.96884 3.63636L5 3.63636L5 3.18182ZM8.18182 1.81818C7.4287 1.81818 6.81818 2.4287 6.81818 3.18182V4.54545C6.81818 5.04753 6.41117 5.45455 5.90909 5.45455H5C4.35219 5.45455 3.91186 5.45504 3.56964 5.47839C3.23559 5.50118 3.06194 5.54268 2.94058 5.59295C2.49507 5.77748 2.14112 6.13143 1.95658 6.57694C1.90631 6.6983 1.86482 6.87195 1.84202 7.206C1.83169 7.3574 1.82584 7.528 1.82252 7.72727H2.27273C4.03 7.72727 5.45455 9.15182 5.45455 10.9091C5.45455 12.6664 4.03 14.0909 2.27273 14.0909H1.81818V14.7273C1.81818 15.506 1.81889 16.0353 1.85232 16.4445C1.88488 16.8431 1.94391 17.0469 2.01635 17.1891C2.19067 17.5312 2.46881 17.8093 2.81093 17.9836C2.95311 18.0561 3.15693 18.1151 3.55549 18.1477C3.96466 18.1811 4.49402 18.1818 5.27273 18.1818H5.45455V17.5C5.45455 15.8682 6.77734 14.5455 8.40909 14.5455C10.0408 14.5455 11.3636 15.8682 11.3636 17.5V18.1817C11.9963 18.1812 12.4486 18.1771 12.8081 18.1477C13.2067 18.1151 13.4105 18.0561 13.5527 17.9836C13.8948 17.8093 14.173 17.5312 14.3473 17.1891C14.4197 17.0469 14.4788 16.8431 14.5113 16.4445C14.5447 16.0353 14.5455 15.506 14.5455 14.7273V13.1818C14.5455 12.6797 14.9525 12.2727 15.4545 12.2727H16.8182C17.5713 12.2727 18.1818 11.6622 18.1818 10.9091C18.1818 10.156 17.5713 9.54545 16.8182 9.54545H15.4545C14.9525 9.54545 14.5455 9.13844 14.5455 8.63636C14.5455 7.98855 14.545 7.54822 14.5216 7.206C14.4988 6.87195 14.4573 6.6983 14.4071 6.57694C14.2225 6.13143 13.8686 5.77748 13.4231 5.59295C13.3017 5.54268 13.128 5.50118 12.794 5.47839C12.4518 5.45504 12.0115 5.45455 11.3636 5.45455H10.4545C9.95247 5.45455 9.54546 5.04753 9.54546 4.54545V3.18182C9.54546 2.4287 8.93493 1.81818 8.18182 1.81818Z"
+                fill="#0A83ED" />
+            </svg>
+
+            Plugin đã được kiểm tra và đánh giá
+          </h3>
+          <p class="text-left text-gray-500 text-base mt-4">Tận dụng thị trường plugin và tích hợp phong phú, được phát
+            triển bởi cộng đồng lập trình viên sôi động.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-center text-primary mb-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="..." />
+            </svg>
+          </div>
+          <h3 class="text-left text-xl font-semibold text-gray-800 flex justify-start items-center gap-3">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 1.81818C5.48131 1.81818 1.81818 5.48131 1.81818 10C1.81818 14.5187 5.48131 18.1818 10 18.1818C11.0042 18.1818 11.8182 17.3678 11.8182 16.3636V15.9091C11.8182 15.8879 11.8182 15.8671 11.8182 15.8466C11.8181 15.4853 11.818 15.2176 11.8493 14.9799C12.0641 13.3481 13.3481 12.0641 14.9799 11.8493C15.2176 11.818 15.4853 11.8181 15.8466 11.8182C15.8671 11.8182 15.8879 11.8182 15.9091 11.8182H16.3636C17.3678 11.8182 18.1818 11.0042 18.1818 10C18.1818 5.48131 14.5187 1.81818 10 1.81818ZM0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 12.0083 18.3719 13.6364 16.3636 13.6364H15.9091C15.458 13.6364 15.3205 13.6383 15.2172 13.6519C14.4013 13.7593 13.7593 14.4013 13.6519 15.2172C13.6383 15.3205 13.6364 15.458 13.6364 15.9091V16.3636C13.6364 18.3719 12.0083 20 10 20C4.47715 20 0 15.5228 0 10ZM6.36364 5.45455C6.36364 4.45039 7.17766 3.63636 8.18182 3.63636C9.18597 3.63636 10 4.45039 10 5.45455C10 6.4587 9.18597 7.27273 8.18182 7.27273C7.17766 7.27273 6.36364 6.4587 6.36364 5.45455ZM11.8182 6.36364C11.8182 5.35948 12.6322 4.54545 13.6364 4.54545C14.6405 4.54545 15.4545 5.35948 15.4545 6.36364C15.4545 7.36779 14.6405 8.18182 13.6364 8.18182C12.6322 8.18182 11.8182 7.36779 11.8182 6.36364ZM3.63636 10C3.63636 8.99585 4.45039 8.18182 5.45455 8.18182C6.4587 8.18182 7.27273 8.99585 7.27273 10C7.27273 11.0042 6.4587 11.8182 5.45455 11.8182C4.45039 11.8182 3.63636 11.0042 3.63636 10Z"
+                fill="#0A83ED" />
+            </svg>
+
+            Hệ thống thiết kế
+          </h3>
+          <p class="text-left text-gray-500 text-base mt-4">Tạo plugin nhanh chóng với hệ thống thiết kế toàn diện để
+            mang lại trải nghiệm đồng nhất cho tất cả người dùng.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-center text-primary mb-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="..." />
+            </svg>
+          </div>
+          <h3 class="text-left text-xl font-semibold text-gray-800 flex justify-start items-center gap-3">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.72727 2.72736C6.22104 2.72736 5 3.9484 5 5.45463C5 6.96087 6.22104 8.18191 7.72727 8.18191C9.2335 8.18191 10.4545 6.96087 10.4545 5.45463C10.4545 3.9484 9.2335 2.72736 7.72727 2.72736ZM3.18182 5.45463C3.18182 2.94425 5.21689 0.90918 7.72727 0.90918C10.2377 0.90918 12.2727 2.94425 12.2727 5.45463C12.2727 7.96502 10.2377 10.0001 7.72727 10.0001C5.21689 10.0001 3.18182 7.96502 3.18182 5.45463ZM12.3391 1.74149C12.5275 1.2761 13.0575 1.05154 13.5229 1.23993C15.1871 1.91355 16.3636 3.5456 16.3636 5.45463C16.3636 7.36367 15.1871 8.99572 13.5229 9.66934C13.0575 9.85773 12.5275 9.63317 12.3391 9.16778C12.1508 8.70238 12.3753 8.17239 12.8407 7.984C13.8419 7.57874 14.5455 6.59776 14.5455 5.45463C14.5455 4.3115 13.8419 3.33053 12.8407 2.92527C12.3753 2.73688 12.1508 2.20689 12.3391 1.74149ZM6.33134 11.8183H9.1232C9.94298 11.8183 10.6043 11.8183 11.1424 11.855C11.6959 11.8927 12.1852 11.9723 12.6486 12.1643C13.7623 12.6256 14.6472 13.5105 15.1085 14.6243C15.3005 15.0876 15.3801 15.577 15.4178 16.1304C15.4546 16.6686 15.4546 17.3298 15.4545 18.1496V18.1819C15.4545 18.684 15.0475 19.091 14.5455 19.091C14.0434 19.091 13.6364 18.684 13.6364 18.1819C13.6364 17.3223 13.6359 16.7231 13.6039 16.2541C13.5724 15.7933 13.5136 15.5249 13.4288 15.32C13.152 14.6518 12.621 14.1209 11.9528 13.8441C11.7479 13.7592 11.4795 13.7004 11.0187 13.6689C10.5497 13.6369 9.95051 13.6365 9.09091 13.6365H6.36364C5.50403 13.6365 4.90486 13.6369 4.43586 13.6689C3.97503 13.7004 3.70667 13.7592 3.50177 13.8441C2.83351 14.1209 2.30259 14.6518 2.02578 15.32C1.94091 15.5249 1.88212 15.7933 1.85067 16.2541C1.81867 16.7231 1.81818 17.3223 1.81818 18.1819C1.81818 18.684 1.41117 19.091 0.909091 19.091C0.407014 19.091 3.80543e-07 18.684 3.80543e-07 18.1819L1.63799e-07 18.1496C-6.12178e-06 17.3298 -1.11081e-05 16.6686 0.0367093 16.1304C0.0744676 15.577 0.154071 15.0876 0.346003 14.6243C0.807339 13.5105 1.69222 12.6256 2.80598 12.1643C3.26935 11.9723 3.75869 11.8927 4.3121 11.855C4.85028 11.8183 5.51156 11.8183 6.33134 11.8183ZM15.4832 12.6153C15.6084 12.1291 16.104 11.8364 16.5902 11.9615C18.5505 12.4661 20 14.2445 20 16.3637V18.1819C20 18.684 19.593 19.091 19.0909 19.091C18.5888 19.091 18.1818 18.684 18.1818 18.1819V16.3637C18.1818 15.0942 17.3135 14.0251 16.137 13.7223C15.6508 13.5972 15.3581 13.1016 15.4832 12.6153Z"
+                fill="#0A83ED" />
+            </svg>
+            Cộng đồng sử dụng CMS Full Form
+          </h3>
+          <p class="text-left text-gray-500 text-base mt-4">Tham gia cộng đồng CMS Full Form, nơi bạn có thể nhận sự hỗ
+            trợ và hợp tác khi gặp vấn đề khi sử dụng.</p>
+        </div>
+      </div>
+
+      <!-- Tiêu đề chính -->
+      <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4 max-w-4xl mx-auto">
+        Những website nổi bật bắt đầu từ các themes trên CMS Full Form
+      </h2>
+      <p class="text-gray-500 max-w-2xl text-lg mx-auto mb-10">
+        CMS Full Form! là hệ thống quản lý nội dung (CMS) giành giải thưởng, cho phép bạn xây dựng website và ứng dụng
+        trực tuyến mạnh mẽ.
+      </p>
+    </div>
+
+    <div class="swiper swiper-marqueeLoop overflow-hidden">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide shrink-0">
+          <img src="https://picsum.photos/id/1/465/300" class="w-fit rounded-xl shadow transition" />
+        </div>
+        <div class="swiper-slide shrink-0">
+          <img src="https://picsum.photos/id/2/465/300" class="w-fit rounded-xl shadow transition" />
+        </div>
+        <div class="swiper-slide shrink-0">
+          <img src="https://picsum.photos/id/3/465/300" class="w-fit rounded-xl shadow transition" />
+        </div>
+        <div class="swiper-slide shrink-0">
+          <img src="https://picsum.photos/id/4/465/300" class="w-fit rounded-xl shadow transition" />
+        </div>
+        <!-- Duplicate -->
+        <div class="swiper-slide shrink-0">
+          <img src="https://picsum.photos/id/1/465/300" class="w-fit rounded-xl shadow transition" />
+        </div>
+        <div class="swiper-slide shrink-0">
+          <img src="https://picsum.photos/id/2/465/300" class="w-fit rounded-xl shadow transition" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="px-6 py-20 lg:px-48 ">
+      <a href="#"
+        class="inline-block bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 text-lg font-semibold px-4 py-2 rounded transition">
+        Khám phá marketplace
+      </a>
+    </div>
+
+  </section>
+
+  <section class=" bg-gray-50">
+    <!-- Tiêu đề -->
+    <div class="px-6 pt-20 pb-4 lg:px-48">
+      <h2 class="text-3xl lg:text-5xl font-semibold text-center text-gray-800 mb-10">
+        Khách hàng nói gì về chúng tôi?
+      </h2>
+    </div>
+
+    <!-- Slider giả lập bằng grid -->
+    <div class="overflow-x-hidden pb-20">
+      <div class="flex gap-6 min-w-[800px]">
+
+        <div class="swiper swiper-marqueeLoop-right overflow-hidden">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide shrink-0">
+              <!-- Testimonial item -->
+              <div class="bg-white rounded-xl shadow-sm p-6 max-w-96 shrink-0 space-y-4">
+                <!-- Stars -->
+                <div class="flex text-yellow-400 mb-2 text-3xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                </div>
+                <!-- Quote -->
+                <p class="text-gray-600 italic mb-4 text-lg">
+                  "It's intuitive, functional, easy-to-setup and presents content in an interactive and interesting
+                  way."
+                </p>
+                <!-- Avatar -->
+                <div class="flex items-center space-x-3">
+                  <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+                    alt="John Smith" class="w-14 h-14 rounded-full" />
+                  <div>
+                    <div class="font-semibold text-base text-gray-800">John Smith</div>
+                    <div class="text-sm text-gray-500">UI Designer @Flowbase</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="swiper-slide shrink-0">
+              <!-- Testimonial item -->
+              <div class="bg-white rounded-xl shadow-sm p-6 max-w-96 shrink-0 space-y-4">
+                <!-- Stars -->
+                <div class="flex text-yellow-400 mb-2 text-3xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                </div>
+                <!-- Quote -->
+                <p class="text-gray-600 italic mb-4 text-lg">
+                  "It's intuitive, functional, easy-to-setup and presents content in an interactive and interesting
+                  way."
+                </p>
+                <!-- Avatar -->
+                <div class="flex items-center space-x-3">
+                  <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+                    alt="John Smith" class="w-14 h-14 rounded-full" />
+                  <div>
+                    <div class="font-semibold text-base text-gray-800">John Smith</div>
+                    <div class="text-sm text-gray-500">UI Designer @Flowbase</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide shrink-0">
+              <!-- Testimonial item -->
+              <div class="bg-white rounded-xl shadow-sm p-6 max-w-96 shrink-0 space-y-4">
+                <!-- Stars -->
+                <div class="flex text-yellow-400 mb-2 text-3xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                </div>
+                <!-- Quote -->
+                <p class="text-gray-600 italic mb-4 text-lg">
+                  "It's intuitive, functional, easy-to-setup and presents content in an interactive and interesting
+                  way."
+                </p>
+                <!-- Avatar -->
+                <div class="flex items-center space-x-3">
+                  <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+                    alt="John Smith" class="w-14 h-14 rounded-full" />
+                  <div>
+                    <div class="font-semibold text-base text-gray-800">John Smith</div>
+                    <div class="text-sm text-gray-500">UI Designer @Flowbase</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide shrink-0">
+              <!-- Testimonial item -->
+              <div class="bg-white rounded-xl shadow-sm p-6 max-w-96 shrink-0 space-y-4">
+                <!-- Stars -->
+                <div class="flex text-yellow-400 mb-2 text-3xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                </div>
+                <!-- Quote -->
+                <p class="text-gray-600 italic mb-4 text-lg">
+                  "It's intuitive, functional, easy-to-setup and presents content in an interactive and interesting
+                  way."
+                </p>
+                <!-- Avatar -->
+                <div class="flex items-center space-x-3">
+                  <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+                    alt="John Smith" class="w-14 h-14 rounded-full" />
+                  <div>
+                    <div class="font-semibold text-base text-gray-800">John Smith</div>
+                    <div class="text-sm text-gray-500">UI Designer @Flowbase</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Duplicate -->
+            <div class="swiper-slide shrink-0">
+              <!-- Testimonial item -->
+              <div class="bg-white rounded-xl shadow-sm p-6 max-w-96 shrink-0 space-y-4">
+                <!-- Stars -->
+                <div class="flex text-yellow-400 mb-2 text-3xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                </div>
+                <!-- Quote -->
+                <p class="text-gray-600 italic mb-4 text-lg">
+                  "It's intuitive, functional, easy-to-setup and presents content in an interactive and interesting
+                  way."
+                </p>
+                <!-- Avatar -->
+                <div class="flex items-center space-x-3">
+                  <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+                    alt="John Smith" class="w-14 h-14 rounded-full" />
+                  <div>
+                    <div class="font-semibold text-base text-gray-800">John Smith</div>
+                    <div class="text-sm text-gray-500">UI Designer @Flowbase</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide shrink-0">
+              <!-- Testimonial item -->
+              <div class="bg-white rounded-xl shadow-sm p-6 max-w-96 shrink-0 space-y-4">
+                <!-- Stars -->
+                <div class="flex text-yellow-400 mb-2 text-3xl">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                </div>
+                <!-- Quote -->
+                <p class="text-gray-600 italic mb-4 text-lg">
+                  "It's intuitive, functional, easy-to-setup and presents content in an interactive and interesting
+                  way."
+                </p>
+                <!-- Avatar -->
+                <div class="flex items-center space-x-3">
+                  <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+                    alt="John Smith" class="w-14 h-14 rounded-full" />
+                  <div>
+                    <div class="font-semibold text-base text-gray-800">John Smith</div>
+                    <div class="text-sm text-gray-500">UI Designer @Flowbase</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+  <section class="py-10 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6">
+        <!-- <img src="/logos/patreon.svg" alt="Patreon" class="h-6 object-contain" />
+          <img src="/logos/airbnb.svg" alt="Airbnb" class="h-6 object-contain" />
+          <img src="/logos/fiberplane.svg" alt="Fiberplane" class="h-6 object-contain" />
+          <img src="/logos/coinbase.svg" alt="Coinbase" class="h-6 object-contain" />
+          <img src="/logos/griffin.svg" alt="Griffin" class="h-6 object-contain" />
+          <img src="/logos/helpscout.svg" alt="HelpScout" class="h-6 object-contain" />
+          <img src="/logos/plaid.svg" alt="Plaid" class="h-6 object-contain" /> -->
+        <img src="image/bds/brands.png" alt="brands logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- Giao diện Blog CMS Full Form: -->
+  <section class="px-6 py-20 lg:px-48 bg-gray-50 text-center">
+    <!-- Tiêu đề -->
+    <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4">Blog</h2>
+    <p class="text-gray-500 max-w-2xl text-lg mx-auto mb-10">
+      CMS Full Form! là hệ thống quản lý nội dung (CMS) giành giải thưởng, cho phép bạn xây dựng website và ứng dụng
+      trực tuyến mạnh mẽ.
+    </p>
+
+    <!-- Danh sách bài viết -->
+    <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6  mx-auto mb-10">
+
+      <!-- Bài viết -->
+      <div class="text-left">
+        <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+          alt="Post 1" class="rounded-lg mb-3 w-full h-60 object-cover" />
+        <h3 class="text-2xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-16">
+          CMS Full Form named a Strong Performer in The Forrester Forrester Forrester Forrester Forrester Forrester Forrester Forrester Forrester Forrester 
+        </h3>
+        <div class="flex items-center text-lg text-gray-500 mt-2 space-x-3">
+          <span>
+            <div class="flex items-center gap-2 text-base ">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                  fill="#B2B2BC"></path>
+              </svg>
+              Alex Xavier
+            </div>
+          </span>
+          <span>•</span>
+          <span>Development</span>
+        </div>
+      </div>
+
+      <!-- Bài viết -->
+      <div class="text-left">
+        <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+          alt="Post 2" class="rounded-lg mb-3 w-full h-60 object-cover" />
+        <h3 class="text-2xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-16">
+          How to develop motion design principles
+        </h3>
+        <div class="flex items-center text-lg text-gray-500 mt-2 space-x-3">
+          <span>
+            <div class="flex items-center gap-2 text-base ">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                  fill="#B2B2BC"></path>
+              </svg>
+              Alex Xavier
+            </div>
+          </span>
+          <span>•</span>
+          <span>Development</span>
+        </div>
+      </div>
+
+      <!-- Bài viết -->
+      <div class="text-left">
+        <img src="https://cms.imgworlds.com/assets/e3873302-212a-4c3a-aab3-c3bee866903c.jpg?key=home-gallery"
+          alt="Post 3" class="rounded-lg mb-3 w-full h-60 object-cover" />
+        <h3 class="text-2xl font-semibold text-gray-800 leading-tight line-clamp-2 min-h-16">
+          6 web design trends to watch in 2025
+        </h3>
+        <div class="flex items-center text-lg text-gray-500 mt-2 space-x-3">
+          <span>
+            <div class="flex items-center gap-2 text-base ">
+              <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.00007 2.33317C6.38924 2.33317 5.0834 3.63901 5.0834 5.24984C5.0834 6.86067 6.38924 8.1665 8.00007 8.1665C9.6109 8.1665 10.9167 6.86067 10.9167 5.24984C10.9167 3.63901 9.6109 2.33317 8.00007 2.33317ZM3.41674 5.24984C3.41674 2.71853 5.46876 0.666504 8.00007 0.666504C10.5314 0.666504 12.5834 2.71853 12.5834 5.24984C12.5834 7.78114 10.5314 9.83317 8.00007 9.83317C5.46876 9.83317 3.41674 7.78114 3.41674 5.24984ZM5.77196 11.0831C5.81951 11.0832 5.86776 11.0832 5.91674 11.0832H10.0834C10.1324 11.0832 10.1806 11.0832 10.2282 11.0831C11.2509 11.0828 11.9493 11.0825 12.5429 11.2626C13.8746 11.6665 14.9167 12.7086 15.3207 14.0403C15.5007 14.634 15.5005 15.3323 15.5001 16.3551C15.5001 16.4026 15.5001 16.4509 15.5001 16.4998C15.5001 16.9601 15.127 17.3332 14.6667 17.3332C14.2065 17.3332 13.8334 16.9601 13.8334 16.4998C13.8334 15.2762 13.8244 14.8492 13.7258 14.5241C13.4834 13.7251 12.8581 13.0999 12.0591 12.8575C11.7341 12.7589 11.307 12.7498 10.0834 12.7498H5.91674C4.69314 12.7498 4.26608 12.7589 3.94102 12.8575C3.14202 13.0999 2.51676 13.7251 2.27439 14.5241C2.17578 14.8492 2.16674 15.2762 2.16674 16.4998C2.16674 16.9601 1.79364 17.3332 1.3334 17.3332C0.873165 17.3332 0.500069 16.9601 0.500069 16.4998C0.500069 16.4509 0.500052 16.4026 0.500034 16.3551C0.499656 15.3323 0.499397 14.634 0.679486 14.0403C1.08344 12.7086 2.12554 11.6665 3.45721 11.2626C4.05088 11.0825 4.74923 11.0828 5.77196 11.0831Z"
+                  fill="#B2B2BC"></path>
+              </svg>
+              Alex Xavier
+            </div>
+          </span>
+          <span>•</span>
+          <span>Design</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+    <a href="#"
+      class="inline-block bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 text-lg font-semibold px-4 py-2 rounded transition">
+      Xem thêm →
+    </a>
+  </section>
+
+  <section class="px-6 py-20 mb-0 lg:mb-32 lg:px-48 bg-white">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="text-3xl lg:text-5xl font-semibold text-gray-800 mb-4">Câu hỏi thường gặp</h2>
+      <p class="text-gray-500 text-base">
+        Khám phá để hiểu thêm về cách CMS Full Form có thể nâng tầm doanh nghiệp của bạn với các giải pháp quản lý nội
+        dung thông minh.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="md:max-w-5xl mx-auto space-y-4 text-left">
+
+      <!-- Item 1 - Active -->
+      <div class="border-b pb-4">
+        <button onclick="toggleFAQ(this)"
+          class="w-full text-left flex justify-between items-center font-medium text-gray-800 text-xl md:text-2xl">
+          CMS Full Form khác biệt gì với WordPress, Joomla hay Wix?
+          <span class="text-xl">+</span>
+        </button>
+        <div
+          class="faq-content mt-2 text-base md:text-lg text-gray-600 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+          CMS Full Form tối ưu cho việc tạo biểu mẫu tùy biến và quản lý nội dung theo luồng (flow). Khác với WordPress
+          hay Wix thiên về blog hoặc kéo-thả, CMS Full Form mạnh mẽ về xử lý logic phía backend, dễ tích hợp hệ thống
+          ngoài, phù hợp cho developer muốn kiểm soát hoàn toàn.
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="border-b pb-4">
+        <button onclick="toggleFAQ(this)"
+          class="w-full text-left flex justify-between items-center font-medium text-gray-800 text-xl md:text-2xl">
+          CMS Full Form có thực sự miễn phí không? Có phí ẩn nào không?
+          <span class="text-xl">+</span>
+        </button>
+        <div
+          class="faq-content mt-2 text-base md:text-lg text-gray-600 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+          CMS Full Form có bản miễn phí với đầy đủ tính năng cốt lõi. Bạn chỉ trả phí nếu muốn dùng các gói dịch vụ mở
+          rộng hoặc hỗ trợ cao cấp.
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="border-b pb-4">
+        <button onclick="toggleFAQ(this)"
+          class="w-full text-left flex justify-between items-center font-medium text-gray-800 text-xl md:text-2xl">
+          CMS Full Form có hỗ trợ SEO tốt không? Có cần cài thêm plugin SEO không?
+          <span class="text-xl">+</span>
+        </button>
+        <div
+          class="faq-content mt-2 text-base md:text-lg text-gray-600 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+          Không cần cài thêm plugin. CMS Full Form tích hợp sẵn các công cụ SEO mạnh mẽ như sitemap tự động, meta tag
+          động, kiểm tra on-page SEO.
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="border-b pb-4">
+        <button onclick="toggleFAQ(this)"
+          class="w-full text-left flex justify-between items-center font-medium text-gray-800 text-xl md:text-2xl">
+          Tôi không biết lập trình, liệu có thể sử dụng được CMS này không?
+          <span class="text-xl">+</span>
+        </button>
+        <div
+          class="faq-content mt-2 text-base md:text-lg text-gray-600 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+          Có. CMS Full Form thiết kế hướng người dùng không chuyên, với giao diện kéo-thả, trực quan dễ dùng.
+        </div>
+      </div>
+
+      <!-- Thêm các câu hỏi khác tương tự -->
+      <div class="border-b pb-4">
+        <button onclick="toggleFAQ(this)"
+          class="w-full text-left flex justify-between items-center font-medium text-gray-800 text-xl md:text-2xl">
+          Website xây dựng bằng CMS Full Form có an toàn và bảo mật không?
+          <span class="text-xl">+</span>
+        </button>
+        <div
+          class="faq-content mt-2 text-base md:text-lg text-gray-600 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+          Có. CMS Full Form thiết kế hướng người dùng không chuyên, với giao diện kéo-thả, trực quan dễ dùng.
+        </div>
+      </div>
+
+      <!-- Thêm các câu hỏi khác tương tự -->
+      <div class="border-b pb-4">
+        <button onclick="toggleFAQ(this)"
+          class="w-full text-left flex justify-between items-center font-medium text-gray-800 text-xl md:text-2xl">
+          Tôi có thể chuyển đổi dữ liệu từ CMS khác sang CMS Full Form dễ dàng không?
+          <span class="text-xl">+</span>
+        </button>
+        <div
+          class="faq-content mt-2 text-base md:text-lg text-gray-600 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+          Có. CMS Full Form thiết kế hướng người dùng không chuyên, với giao diện kéo-thả, trực quan dễ dùng.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="relative py-20 px-6 lg:px-48 pb-0 bg-primary-darker ">
+    <div class="mx-auto flex flex-col md:flex-row items-center justify-between">
+
+      <!-- Trái: Ảnh nổi + thẻ -->
+      <div class="md:w-1/2 relative  md:-mt-44 z-10 order-1 md:order-2">
+        <img src="image/bds/manstand.png" alt="Người dùng CMS" class="w-full object-contain" />
+
+        <!-- Ảnh nổi giả lập - nếu muốn thêm hiệu ứng animation/floating -->
+        <!-- Có thể gắn thêm analytics card, mini graph bằng divs -->
+      </div>
+
+      <!-- Phải: Nội dung -->
+      <div class="md:w-1/2  text-white rounded-xl py-8 md:p-12">
+        <h2 class="text-3xl lg:text-5xl font-semibold mb-4 !leading-snug max-w-xl">
+          Bắt đầu với CMS Full Form và cảm nhận sự tiện lợi tức thì.
+        </h2>
+        <p class="text-gray-300 text-base mb-6 max-w-md">
+          Tạo, quản lý và tuỳ chỉnh nội dung dễ dàng chỉ trong vài bước. Không cần kỹ thuật phức tạp – mọi thứ đều trực
+          quan, nhanh gọn và linh hoạt.
+        </p>
+        <a href="#"
+          class="inline-block bg-primary hover:bg-blue-700 text-white text-base font-semibold px-6 py-4 rounded-lg ">
+          Trải nghiệm ngay
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-white border-t pt-12 px-6 lg:px-48">
+    <div class="mx-auto flex  flex-col md:flex-row gap-8 pb-10 justify-between">
+    <!-- Logo + Newsletter -->
+    <div class="flex-1 space-y-10">
+      <div class="flex items-center space-x-2">
+        <img src="image/bds/Logo-f.png" alt="CMS Logo" />
+      </div>
+
+      <div>
+        <h4 class="text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Subscribe to our newsletter</h4>
+        <p class="text-gray-500 text-lg mb-4">
+          Want to stay up to date with news, updates & strategy about our product? Subscribe now!
+        </p>
+      </div>
+
+      <form class="flex border-b border-gray-300 max-w-sm">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-2 py-2 outline-none text-sm" />
+        <button type="submit" class="text-primary text-base md:text-xl font-semibold hover:underline whitespace-nowrap">
+          SUBSCRIBE NOW
+        </button>
+      </form>
+    </div>
+
+    <!-- Company + Resources -->
+    <div class="flex md:justify-evenly flex-1 gap-16">
+      <!-- Company -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Company</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Trang chủ</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Tính năng</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="text-left">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Resources</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Templates</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Plugin</a></li>
+          <li><a href="#" class="text-lg text-gray-500 font-medium">Help center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex-1 text-left">
+      <div class="ml-auto">
+        <h5 class="font-semibold text-gray-800 mb-3 text-xl md:text-2xl">Contact</h5>
+        <ul class="md:space-y-6 space-y-4">
+          <li class="text-lg text-gray-500 font-medium">(84) 123 456 789</li>
+          <li class="text-lg text-gray-500 font-medium">www.example.com</li>
+          <li class="text-lg text-gray-500 font-medium">example@gmail.com</li>
+          <li class="text-lg text-gray-500 font-medium">901 W. Foothill Blvd, Suite A Upland, CA 91786</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t pt-4 pb-6 text-center text-lg text-gray-500 flex flex-col md:flex-row justify-between mx-auto px-4 md:px-0">
+    <span>Copyright © 2025 CMS Full Form. All rights reserved</span>
+    <div class="space-x-3 mt-2 md:mt-0">
+      <a href="#" class="hover:text-gray-600">User Term & Conditions</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+    </div>
+  </div>
+  </footer>
+
+
+  <script>
+
+    function toggleFAQ(button) {
+      const icon = button.querySelector("span");
+      const content = button.nextElementSibling;
+
+      const isOpen = content.classList.contains("max-h-[500px]"); // có thể adjust nếu nội dung dài hơn
+
+      // Đóng tất cả
+      document.querySelectorAll(".faq-content").forEach(el => {
+        el.classList.remove("max-h-[500px]", "opacity-100");
+        el.classList.add("max-h-0", "opacity-0");
+      });
+
+      document.querySelectorAll("section [onclick^='toggleFAQ']").forEach(btn => {
+        btn.querySelector("span").textContent = "+";
+      });
+
+      // Mở nếu đang đóng
+      if (!isOpen) {
+        icon.textContent = "−";
+        content.classList.remove("max-h-0", "opacity-0");
+        content.classList.add("max-h-[500px]", "opacity-100");
+      }
+    }
+
+
+
+    new Swiper('.imageSlider', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: "#custom-next",
+        prevEl: "#custom-prev",
+      },
+      pagination: {
+        el: '.swiper-pagination-cts',
+        clickable: true, // để click dot chuyển slide
+      },
+    });
+
+
+    new Swiper(".swiper-marqueeLoop", {
+      slidesPerView: 5, // default desktop
+      spaceBetween: 24,
+      loop: true,
+      speed: 4000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      freeMode: true,
+      freeModeMomentum: false,
+      grabCursor: true,
+
+      // 🔥 Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1.5, // mobile nhỏ
+          spaceBetween: 12,
+        },
+        480: {
+          slidesPerView: 2.2,
+          spaceBetween: 16,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+        1280: {
+          slidesPerView: 5, // mặc định desktop
+          spaceBetween: 24,
+        },
+      },
+    });
+
+    new Swiper(".swiper-marqueeLoop-right", {
+      slidesPerView: 5, // default desktop
+      spaceBetween: 24,
+      loop: true,
+      speed: 4000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      },
+      freeMode: true,
+      freeModeMomentum: false,
+      grabCursor: true,
+
+      // 🔥 Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1.5, // mobile nhỏ
+          spaceBetween: 12,
+        },
+        480: {
+          slidesPerView: 2.2,
+          spaceBetween: 16,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+        1280: {
+          slidesPerView: 5, // mặc định desktop
+          spaceBetween: 24,
+        },
+      },
+    });
+
+
+  </script>
+
+</body>
+
+</html>
